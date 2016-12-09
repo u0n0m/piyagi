@@ -65,6 +65,7 @@
                 android:scaleType="fitCenter"
                 android:background="#F2EC7C"/>
             <TextView
+                android:id="@+id/repeat_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="11"
