@@ -16,7 +16,7 @@
         <ImageButton
             android:id="@+id/btn_repeat3"
             android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/repeat_sign2"
@@ -34,7 +34,7 @@
         <ImageButton
             android:id="@+id/btn_hospital3"
             android:layout_width="95dp"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/hospital2"

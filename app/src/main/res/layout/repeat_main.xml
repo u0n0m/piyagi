@@ -16,7 +16,7 @@
         <ImageButton
             android:id="@+id/btn_repeat"
             android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/repeat_sign"
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/btn_hospital"
             android:layout_width="95dp"
-            android:layout_height="65dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/hospital"
@@ -59,19 +59,21 @@
             android:gravity="center"
             android:layout_weight="1">
             <ImageButton
+                android:id="@+id/btn_repeat_hour_up"
                 android:layout_width="50dp"
                 android:layout_height="65dp"
                 android:src="@drawable/triangle_up"
                 android:scaleType="fitCenter"
                 android:background="#F2EC7C"/>
             <TextView
-                android:id="@+id/repeat_hour"
+                android:id="@+id/textview_repeat_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="11"
+                android:text="1"
                 android:textSize="50sp"
                 android:textColor="#2D2B2C"/>
             <ImageButton
+                android:id="@+id/btn_repeat_hour_down"
                 android:layout_width="50dp"
                 android:layout_height="65dp"
                 android:src="@drawable/triangle_down"
@@ -94,18 +96,21 @@
             android:gravity="center"
             android:layout_weight="1">
             <ImageButton
+                android:id="@+id/btn_repeat_minute_up"
                 android:layout_width="50dp"
                 android:layout_height="65dp"
                 android:src="@drawable/triangle_up"
                 android:scaleType="fitCenter"
                 android:background="#F2EC7C"/>
             <TextView
+                android:id="@+id/textview_repeat_minute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30"
+                android:text="10"
                 android:textSize="50sp"
                 android:textColor="#2D2B2C"/>
             <ImageButton
+                android:id="@+id/btn_repeat_minute_down"
                 android:layout_width="50dp"
                 android:layout_height="65dp"
                 android:src="@drawable/triangle_down"
