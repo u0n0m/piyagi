@@ -16,24 +16,33 @@
         </activity>
         <activity
             android:name=".SplashActivity"
-            android:label="@string/title_activity_splash"
+            android:label="SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity
             android:name=".RepeatActivity"
-            android:label="@string/title_activity_splash"
+            android:label="RepeatActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity
             android:name=".AlyacActivity"
-            android:label="@string/title_activity_splash"
+            android:label="AlyacActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity
             android:name=".HospitalActivity"
-            android:label="@string/title_activity_splash"
+            android:label="HospitalActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="true"
+            android:enabled="true">
+        </activity>
+        <service android:name=".RepeatService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>

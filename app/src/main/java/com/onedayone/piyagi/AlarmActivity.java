@@ -4,15 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.onedayone.piyagi.R;
-
-public class SplashActivity extends Activity{
+public class AlarmActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.alarm_repeat);
 
         Handler hd = new Handler();
         hd.postDelayed(new Runnable() {
@@ -21,7 +19,7 @@ public class SplashActivity extends Activity{
             public void run() {
                 finish();       // 3 초후 이미지를 닫아버림
             }
-        }, 3000);
+        }, 4000);
     }
 
 }

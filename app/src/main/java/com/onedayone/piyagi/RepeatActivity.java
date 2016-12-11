@@ -114,23 +114,32 @@ public class RepeatActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save_repeat_time();
+                save_repeat_settings();
             }
         });
     }
 
-    public boolean save_repeat_time(){
+    public boolean save_repeat_settings(){
+
         TextView textview_repeat_hour = (TextView) findViewById(R.id.textview_repeat_hour);
+        TextView textview_repeat_minute = (TextView) findViewById(R.id.textview_repeat_minute);
+
         try {
             FileOutputStream fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-            String str = textview_repeat_hour.getText().toString();
-            fos.write(str.getBytes());
+            String hour1 = textview_repeat_hour.getText().toString();
+            String minute1 = textview_repeat_minute.getText().toString();
+            String time1 = hour1 + ":" + minute1;
+            fos.write(time1.getBytes());
             fos.close();
         } catch (Exception e) {
             Log.e("File", "에러=" + e);
         }
 
-        try {
+        Toast.makeText(getApplicationContext(),"예약 되었습니다!",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(RepeatActivity.this, RepeatService.class);
+        startService(intent);
+
+/*        try {
             FileInputStream fis = openFileInput(FILE_NAME);
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);
@@ -141,7 +150,7 @@ public class RepeatActivity extends AppCompatActivity {
             fis.close();
         } catch (Exception e) {
             Log.e("File", "에러=" + e);
-        }
+        }*/
         return true;
     }
 
