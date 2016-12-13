@@ -25,11 +25,12 @@ public class RepeatService extends Service  {
         Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
 
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-        Intent Intent = new Intent(getApplicationContext(), SplashActivity.class);
+        Intent Intent = new Intent(getApplicationContext(), AlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
-        int second = 5000;
+        Integer second = Integer.parseInt(intent.getStringExtra("total_minutes")) * 1000;// * 60 * 1000 ;
+        Toast.makeText(this, second.toString(), Toast.LENGTH_SHORT).show();
         //alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + second, pIntent);
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 8000, 15000, pIntent);
+        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, second, second, pIntent);
         return super.onStartCommand(intent, flags, startId);
     }
 

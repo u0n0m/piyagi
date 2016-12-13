@@ -1,17 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splash1"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SplashActivity"
-    android:background="@drawable/piyagi1">
-    <LinearLayout
+    android:background="#0F9B8E"
+    tools:context="com.onedayone.piyagi.RepeatActivity"    >
+
+    <RelativeLayout
+        android:id="@+id/alarm_alyac_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:background="#0F9B8E">
+        <ImageView
+            android:id="@+id/alarm_alyac_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_gravity="center"
+            android:src="@drawable/alyac_text1"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
-    </LinearLayout>
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/alarm_alyac_center"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_below="@+id/alarm_alyac_top">
 
+        <ImageView
+            android:id="@+id/alarm_piyagi2"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/piyagi2"
+            android:background="@android:color/transparent" />
+        
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ok"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="#0F9B8E"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_alarm_repeat1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="10dp"
+        android:background="#E6BF96"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/piyagi_text1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="#E6BF96"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
 

@@ -9,20 +9,24 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.onedayone.piyagi.R;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import static java.lang.Integer.min;
+import static java.lang.Integer.parseInt;
 
 public class RepeatActivity extends AppCompatActivity {
-    static final String FILE_NAME = "exam.txt";
+    static final String FILE_NAME = "repeat_settings.value";
     Integer repeat_hour = 1;
     Integer repeat_minute = 10;
+    Integer hour1;
+    Integer minute1;
+    Integer total_minutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Toast.makeText(getApplicationContext(),"onCreate",Toast.LENGTH_SHORT).show();
         setContentView(R.layout.repeat_main);
 
         //복약 예약 버튼
@@ -73,6 +77,7 @@ public class RepeatActivity extends AppCompatActivity {
                 else{
                     repeat_hour -= 1;
                 }
+                //Toast.makeText(getApplicationContext(),"시간 내림 버튼 누름!",Toast.LENGTH_SHORT).show();
                 tv.setText(String.valueOf(repeat_hour));
             }
         });
@@ -114,6 +119,7 @@ public class RepeatActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_repeat_settings();
             }
         });
@@ -123,34 +129,27 @@ public class RepeatActivity extends AppCompatActivity {
 
         TextView textview_repeat_hour = (TextView) findViewById(R.id.textview_repeat_hour);
         TextView textview_repeat_minute = (TextView) findViewById(R.id.textview_repeat_minute);
-
+        Toast.makeText(getApplicationContext(),"save_repeat_settings!",Toast.LENGTH_SHORT).show();
         try {
             FileOutputStream fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-            String hour1 = textview_repeat_hour.getText().toString();
-            String minute1 = textview_repeat_minute.getText().toString();
-            String time1 = hour1 + ":" + minute1;
-            fos.write(time1.getBytes());
+
+            hour1 = parseInt(textview_repeat_hour.getText().toString());
+            minute1 = parseInt(textview_repeat_minute.getText().toString());
+            total_minutes = hour1 * 60 + minute1;
+
+            fos.write(total_minutes);
             fos.close();
+
+            Toast.makeText(getApplicationContext(),"파일에 저장 되었습니다!",Toast.LENGTH_SHORT).show();
+
         } catch (Exception e) {
             Log.e("File", "에러=" + e);
+            Toast.makeText(getApplicationContext(),"저장 및 서비스 시작 실패!",Toast.LENGTH_SHORT).show();
         }
-
-        Toast.makeText(getApplicationContext(),"예약 되었습니다!",Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(RepeatActivity.this, RepeatService.class);
+        //Toast.makeText(getApplicationContext(),"서비스 시작되었습니다!"+total_minutes,Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, RepeatService.class);
+        intent.putExtra("total_minutes", String.valueOf(total_minutes));
         startService(intent);
-
-/*        try {
-            FileInputStream fis = openFileInput(FILE_NAME);
-            byte[] buffer = new byte[fis.available()];
-            fis.read(buffer);
-            String str = new String(buffer);
-            Toast toast = Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT);
-            toast.show();
-            System.out.println("file read");
-            fis.close();
-        } catch (Exception e) {
-            Log.e("File", "에러=" + e);
-        }*/
         return true;
     }
 
