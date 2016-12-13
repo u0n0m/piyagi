@@ -40,6 +40,7 @@
             android:background="@android:color/transparent" />
 
         <ImageButton
+            android:id="@+id/btn_repeat_popup_ok"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:src="@drawable/ok"

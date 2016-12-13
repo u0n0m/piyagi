@@ -30,7 +30,7 @@ public class RepeatService extends Service  {
         Integer second = Integer.parseInt(intent.getStringExtra("total_minutes")) * 1000;// * 60 * 1000 ;
         Toast.makeText(this, second.toString(), Toast.LENGTH_SHORT).show();
         //alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + second, pIntent);
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, second, second, pIntent);
+        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 0, second, pIntent);
         return super.onStartCommand(intent, flags, startId);
     }
 
