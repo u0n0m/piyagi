@@ -27,7 +27,7 @@ public class RepeatService extends Service  {
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         Intent Intent = new Intent(getApplicationContext(), RepeatAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
-        Integer second = Integer.parseInt(intent.getStringExtra("total_minutes")) * 1000;// * 60 * 1000 ;
+        Integer second = Integer.parseInt(intent.getStringExtra("total_minutes")) * 60 * 1000 ;
         Toast.makeText(this, second.toString(), Toast.LENGTH_SHORT).show();
         //alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + second, pIntent);
         alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 0, second, pIntent);

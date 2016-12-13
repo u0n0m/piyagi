@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         repeat();
         alyac();
+        hospital();
 
         ImageButton btn_add = (ImageButton) findViewById(R.id.btn_add1);
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Box", "Box  Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Repeat", "Box  Black") ;
         // 두 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
         // 세 번째 아이템 추가.
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 // get item
-                AlyacListViewItem item = (AlyacListViewItem) parent.getItemAtPosition(position) ;
+                RepeatListViewItem item = (RepeatListViewItem) parent.getItemAtPosition(position) ;
 
                 String titleStr = item.getTitle() ;
                 String descStr = item.getDesc() ;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Box", "Box  Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Alyac", "Box  Black") ;
         // 두 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
         // 세 번째 아이템 추가.
@@ -108,4 +109,38 @@ public class MainActivity extends AppCompatActivity {
             }
         }) ;
     }
+
+    public void hospital(){
+        ListView listview ;
+        HospitalListViewAdapter adapter;
+
+        // Adapter 생성
+        adapter = new HospitalListViewAdapter();
+
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.hospital_listview);
+        listview.setAdapter(adapter);
+
+        // 첫 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Hospital", "Box  Black") ;
+        // 두 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
+        // 세 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                // get item
+                HospitalListViewItem item = (HospitalListViewItem) parent.getItemAtPosition(position) ;
+
+                String titleStr = item.getTitle() ;
+                String descStr = item.getDesc() ;
+                Drawable iconDrawable = item.getIcon() ;
+
+                // TODO : use item data.
+            }
+        }) ;
+    }
+
 }
