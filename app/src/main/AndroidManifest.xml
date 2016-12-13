@@ -35,7 +35,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity
-            android:name=".AlarmActivity"
+            android:name=".RepeatAlarmActivity"
             android:exported="true"
             android:enabled="true">
         </activity>

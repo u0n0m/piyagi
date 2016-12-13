@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class AlarmActivity extends Activity{
+public class RepeatAlarmActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
