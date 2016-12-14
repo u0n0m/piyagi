@@ -22,8 +22,7 @@ public class RepeatService extends Service  {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, "repeatService 시작", Toast.LENGTH_SHORT).show();
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         Intent Intent = new Intent(getApplicationContext(), RepeatAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);

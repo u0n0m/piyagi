@@ -2,6 +2,7 @@ package com.onedayone.piyagi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -20,7 +21,19 @@ import com.onedayone.piyagi.R;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
+import static java.lang.Integer.parseInt;
+
 public class MainActivity extends AppCompatActivity {
+    static final String FILE_NAME = "repeat_settings.value";
+    Integer repeat_hour = 1;
+    Integer repeat_minute = 10;
+    Integer hour1;
+    Integer minute1;
+    Integer total_minutes;
+    String on_off;
+    String desc;
+    byte [] buf1;
+    String repeat_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RepeatActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -55,8 +69,24 @@ public class MainActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.repeat_listview);
         listview.setAdapter(adapter);
 
+//        try {
+//            FileInputStream fos = openFileInput(FILE_NAME);
+//            buf1 = new byte[fos.available()];
+//            fos.read(buf1);
+//            repeat_settings =  buf1.toString();
+//            Toast.makeText(getApplicationContext(), repeat_settings,Toast.LENGTH_SHORT).show();
+//            fos.close();
+//            Toast.makeText(getApplicationContext(),"파일에서 읽었습니다!",Toast.LENGTH_SHORT).show();
+//        } catch (Exception e) {
+//            Log.e("File", "에러=" + e);
+//            Toast.makeText(getApplicationContext(),"파일 읽기 실패!",Toast.LENGTH_SHORT).show();
+//        }
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("PrefName", Context.MODE_PRIVATE);
+        String repeat_settings = prefs.getString("test", "");
+        Toast.makeText(getApplicationContext(),repeat_settings+"파일 읽기!",Toast.LENGTH_SHORT).show();
+
         // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Repeat", "Box  Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), repeat_settings, "Box  Black") ;
         // 두 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
         // 세 번째 아이템 추가.
@@ -94,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
         // 세 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -126,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
         // 두 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
         // 세 번째 아이템 추가.
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -13,8 +13,8 @@ public class RepeatAlarmActivity extends Activity{
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_repeat);
-        ImageButton btn_save = (ImageButton) findViewById(R.id.btn_repeat_popup_ok);
-        btn_save.setOnClickListener(new View.OnClickListener() {
+        ImageButton btn_ok = (ImageButton) findViewById(R.id.btn_repeat_popup_ok);
+        btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
