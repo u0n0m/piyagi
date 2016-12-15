@@ -16,13 +16,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.onedayone.piyagi.R;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
-import static java.lang.Integer.parseInt;
-
 public class MainActivity extends AppCompatActivity {
     static final String FILE_NAME = "repeat_settings.value";
     Integer repeat_hour = 1;
@@ -42,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        repeat();
-        alyac();
-        hospital();
+        repeat_listview();
+        alyac_listview();
+        hospital_listview();
 
         ImageButton btn_add = (ImageButton) findViewById(R.id.btn_add1);
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
-    public void repeat(){
+    public void repeat_listview(){
         ListView listview ;
-        RepeatListViewAdapter adapter;
+        final RepeatListViewAdapter adapter;
 
         // Adapter 생성
         adapter = new RepeatListViewAdapter();
@@ -69,52 +61,47 @@ public class MainActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.repeat_listview);
         listview.setAdapter(adapter);
 
-//        try {
-//            FileInputStream fos = openFileInput(FILE_NAME);
-//            buf1 = new byte[fos.available()];
-//            fos.read(buf1);
-//            repeat_settings =  buf1.toString();
-//            Toast.makeText(getApplicationContext(), repeat_settings,Toast.LENGTH_SHORT).show();
-//            fos.close();
-//            Toast.makeText(getApplicationContext(),"파일에서 읽었습니다!",Toast.LENGTH_SHORT).show();
-//        } catch (Exception e) {
-//            Log.e("File", "에러=" + e);
-//            Toast.makeText(getApplicationContext(),"파일 읽기 실패!",Toast.LENGTH_SHORT).show();
-//        }
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("PrefName", Context.MODE_PRIVATE);
-        String repeat_settings = prefs.getString("test", "");
-        Toast.makeText(getApplicationContext(),repeat_settings+"파일 읽기!",Toast.LENGTH_SHORT).show();
+        SharedPreferences pref_repeat = getApplicationContext().getSharedPreferences("repeatSettings", Context.MODE_PRIVATE);
+        Integer order = pref_repeat.getInt("order", 0);
+        //String order_string = pref_repeat.getString(order.toString(), "Blank"); //리스트뷰의 아이템 개수 가져오기
+        //Toast.makeText(getApplicationContext(),"오더 번호="+order.toString(),Toast.LENGTH_SHORT).show();
 
-        // 첫 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), repeat_settings, "Box  Black") ;
-        // 두 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save), "Circle", "Circle Black") ;
-        // 세 번째 아이템 추가.
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),  "Ind", "Ind Black") ;
+        if( order <= 0 ){
+            adapter.addItem("10분 간격", "안약 넣기", ContextCompat.getDrawable(this, R.drawable.circle_on)) ;
+            adapter.addItem("20분 간격", "가글 하기", ContextCompat.getDrawable(this, R.drawable.circle_off)) ;
+        }
+
+        Integer i;
+        for(i=order; i>0;i--){
+            repeat_settings = pref_repeat.getString(i.toString(),"fail");
+            //셋팅 값에서 콜론을 기준으로 2번째 필드에서 반복주기, 3번째 필드에서 on/off, 4번째 필드에서 설명가져오기
+            adapter.addItem(period, repeat_settings, ContextCompat.getDrawable(this, R.drawable.circle_on)) ;
+            Toast.makeText(getApplicationContext(),"설정값="+repeat_settings, Toast.LENGTH_SHORT).show();
+        }
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 // get item
-                RepeatListViewItem item = (RepeatListViewItem) parent.getItemAtPosition(position) ;
-
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
-                Drawable iconDrawable = item.getIcon() ;
-
+                RepeatListViewItem item = (RepeatListViewItem) parent.getItemAtPosition(position);
+//                String titleStr = item.getTitle() ;
+//                String descStr = item.getDesc() ;
+                //item.setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle_off));
+                Toast.makeText(getApplicationContext(),"리스트뷰 버튼 클릭됨", Toast.LENGTH_SHORT).show();
                 // TODO : use item data.
             }
         }) ;
+
     }
 
-    public void alyac(){
+    public void alyac_listview(){
         ListView listview ;
         AlyacListViewAdapter adapter;
 
         // Adapter 생성
         adapter = new AlyacListViewAdapter();
-
         // 리스트뷰 참조 및 Adapter달기
+
         listview = (ListView) findViewById(R.id.alyac_listview);
         listview.setAdapter(adapter);
 
@@ -133,16 +120,16 @@ public class MainActivity extends AppCompatActivity {
                 // get item
                 AlyacListViewItem item = (AlyacListViewItem) parent.getItemAtPosition(position) ;
 
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
-                Drawable iconDrawable = item.getIcon() ;
+                String titleStr = item.getTitle();
+                String descStr = item.getDesc();
+                Drawable iconDrawable = item.getIcon();
 
                 // TODO : use item data.
             }
         }) ;
     }
 
-    public void hospital(){
+    public void hospital_listview(){
         ListView listview ;
         HospitalListViewAdapter adapter;
 
@@ -168,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
                 // get item
                 HospitalListViewItem item = (HospitalListViewItem) parent.getItemAtPosition(position) ;
 
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
-                Drawable iconDrawable = item.getIcon() ;
+                String titleStr = item.getTitle();
+                String descStr = item.getDesc();
+                Drawable iconDrawable = item.getIcon();
 
                 // TODO : use item data.
             }

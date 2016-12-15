@@ -3,27 +3,28 @@ package com.onedayone.piyagi;
 import android.graphics.drawable.Drawable;
 
 public class RepeatListViewItem {
-    private Drawable iconDrawable ;
-    private String titleStr ;
+    private String periodStr ;
     private String descStr ;
+    private Drawable iconDrawable ;
 
-    public void setIcon(Drawable icon) {
-        iconDrawable = icon ;
-    }
-    public void setTitle(String title) {
-        titleStr = title ;
+    public void setPeriod(String period) {
+        periodStr = period;
     }
     public void setDesc(String desc) {
         descStr = desc ;
     }
-
-    public Drawable getIcon() {
-        return this.iconDrawable ;
+    public void setIcon(Drawable icon) {
+        iconDrawable = icon ;
     }
-    public String getTitle() {
-        return this.titleStr ;
+
+    public String getperiod() {
+        return this.periodStr ;
     }
     public String getDesc() {
         return this.descStr ;
     }
+    public Drawable getIcon() {
+        return this.iconDrawable ;
+    }
+
 }

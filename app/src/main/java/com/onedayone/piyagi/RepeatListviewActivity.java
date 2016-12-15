@@ -14,18 +14,18 @@ public class RepeatListviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
 
         ListView listview ;
-        AlyacListViewAdapter adapter;
+        RepeatListViewAdapter adapter;
 
         // Adapter 생성
-        adapter = new AlyacListViewAdapter();
+        adapter = new RepeatListViewAdapter();
 
         // 리스트뷰 참조 및 Adapter달기
-        listview = (ListView) findViewById(R.id.alyac_listview);
+        listview = (ListView) findViewById(R.id.repeat_listview);
         listview.setAdapter(adapter);
 
+/*
         // 첫 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),
                 "hoho", "Account Box Black 36dp") ;
@@ -35,6 +35,7 @@ public class RepeatListviewActivity extends AppCompatActivity {
         // 세 번째 아이템 추가.
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.btn_save),
                 "hihi", "Assignment Ind Black 36dp") ;
+*/
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -42,9 +43,9 @@ public class RepeatListviewActivity extends AppCompatActivity {
                 // get item
                 RepeatListViewItem item = (RepeatListViewItem) parent.getItemAtPosition(position) ;
 
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
-                Drawable iconDrawable = item.getIcon() ;
+//                String titleStr = item.getTitle() ;
+//                String descStr = item.getDesc() ;
+//                Drawable iconDrawable = item.getIcon() ;
 
                 // TODO : use item data.
             }

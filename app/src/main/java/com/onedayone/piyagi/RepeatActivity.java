@@ -10,10 +10,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.onedayone.piyagi.R;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import static java.lang.Integer.min;
 import static java.lang.Integer.parseInt;
 
 public class RepeatActivity extends AppCompatActivity {
@@ -125,6 +121,17 @@ public class RepeatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_repeat_settings();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+        ImageButton btn_cancel = (ImageButton) findViewById(R.id.btn_cancel);
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(getApplicationContext(),"cancel 클릭됨!",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
     }
@@ -134,51 +141,28 @@ public class RepeatActivity extends AppCompatActivity {
         TextView textview_repeat_hour = (TextView) findViewById(R.id.textview_repeat_hour);
         TextView textview_repeat_minute = (TextView) findViewById(R.id.textview_repeat_minute);
         Toast.makeText(getApplicationContext(),"save_repeat_settings!",Toast.LENGTH_SHORT).show();
-//        try {
-//            FileOutputStream fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-//            hour1 = parseInt(textview_repeat_hour.getText().toString());
-//            minute1 = parseInt(textview_repeat_minute.getText().toString());
-//            total_minutes = hour1 * 60 + minute1;
-//            on_off = ":on";
-//            desc = "반복 복용";
-//            repeat_settings = total_minutes.toString() + on_off + desc ;
-//            fos.write(repeat_settings.getBytes());
-//            fos.close();
-//            Toast.makeText(getApplicationContext(),repeat_settings+"파일에 저장 되었습니다!",Toast.LENGTH_SHORT).show();
-//        } catch (Exception e) {
-//            Log.e("File", "에러=" + e);
-//            Toast.makeText(getApplicationContext(),"설정 저장 실패!",Toast.LENGTH_SHORT).show();
-//        }
-//        try {
-//
-//            FileInputStream fis = openFileInput(FILE_NAME);
-//            byte[] buffer = new byte[fis.available()];
-//            fis.read(buffer);
-//            String str = new String(buffer);
-//            Toast.makeText(getApplicationContext(), str+"읽음",Toast.LENGTH_SHORT).show();
-//            fis.close();
-//
-//        } catch (Exception e) {
-//            Log.e("File", "에러=" + e);
-//        }
-            hour1 = parseInt(textview_repeat_hour.getText().toString());
-            minute1 = parseInt(textview_repeat_minute.getText().toString());
-            total_minutes = hour1 * 60 + minute1;
-            on_off = ":on";
-            desc = "반복 복용";
-            repeat_settings = total_minutes.toString() + on_off + desc ;
-        SharedPreferences prefs = getApplicationContext().getSharedPreferences("PrefName", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("test",repeat_settings);//token, text);
+
+        SharedPreferences pref_repeat = getApplicationContext().getSharedPreferences("repeatSettings", Context.MODE_PRIVATE);
+        Integer order = pref_repeat.getInt("order", 0);
+        order ++;
+        hour1 = parseInt(textview_repeat_hour.getText().toString());
+        minute1 = parseInt(textview_repeat_minute.getText().toString());
+        total_minutes = hour1 * 60 + minute1;
+        on_off = "on";
+        desc = "반복 복용";
+        repeat_settings = order.toString() +":"+ total_minutes.toString() +":"+ on_off +":"+ desc;
+
+        SharedPreferences.Editor editor = pref_repeat.edit();
+        editor.putInt("order",order);
+        editor.putString(order.toString(),repeat_settings);
         editor.commit();
 
-        //Toast.makeText(getApplicationContext(),"서비스 시작되었습니다!"+total_minutes,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "order=" + order.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "sharedPreference=" + repeat_settings, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, RepeatService.class);
         intent.putExtra("total_minutes", String.valueOf(total_minutes));
         startService(intent);
 
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
         return true;
     }
 
