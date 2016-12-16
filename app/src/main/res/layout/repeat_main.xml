@@ -7,7 +7,7 @@
     android:background="#F2EC7C"
     tools:context="com.onedayone.piyagi.RepeatActivity"    >
     <LinearLayout
-        android:id="@+id/top_menu1"
+        android:id="@+id/repeat_top_menu1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -45,11 +45,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/timepicker1"
+        android:id="@+id/timepicker_repeat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/top_menu1"
+        android:layout_below="@id/repeat_top_menu1"
         android:layout_marginTop="20dp">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textSize="50sp"
+                android:textSize="40sp"
                 android:textColor="#2D2B2C"/>
             <ImageButton
                 android:id="@+id/btn_repeat_hour_down"
@@ -125,7 +125,7 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/timepicker1"
+        android:layout_below="@+id/timepicker_repeat"
         android:src="@drawable/repeat_alarm_text1"
         android:background="@android:color/transparent"
         />
@@ -211,14 +211,14 @@
     <RelativeLayout
         android:id="@+id/bottom_menu1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:padding="30dp"
+        android:padding="10dp"
         android:background="#0F9B8E"
         android:layout_alignParentBottom="true" >
         <ImageButton
             android:id="@+id/btn_save"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
@@ -229,8 +229,9 @@
             android:background="#0F9B8E"/>
         <ImageButton
             android:id="@+id/btn_cancel"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@id/btn_save"
             android:layout_marginLeft="50dp"
             android:src="@drawable/btn_cancel"

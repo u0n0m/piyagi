@@ -68,7 +68,7 @@
     <FrameLayout
         android:id="@+id/alyac_list1"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="180dp"
         android:layout_marginTop="45dp"
         android:layout_below="@id/repeat_list1">
         <RelativeLayout
@@ -101,7 +101,7 @@
     <FrameLayout
         android:id="@+id/hospital_list1"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="180dp"
         android:layout_marginTop="10dp"
         android:layout_below="@id/alyac_list1">
         <RelativeLayout
@@ -150,7 +150,7 @@
 
     <ImageView
         android:id="@+id/main_background_piyagi3"
-        android:layout_width="140dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:src="@drawable/piyagi3_edited1"
         android:adjustViewBounds="true"

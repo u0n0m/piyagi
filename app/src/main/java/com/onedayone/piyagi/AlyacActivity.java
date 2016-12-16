@@ -30,8 +30,8 @@ public class AlyacActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alyac_main);
 
-        ImageButton btn_alyac = (ImageButton) findViewById(R.id.btn_alyac2);
-        btn_alyac.setOnClickListener(new View.OnClickListener() {
+        ImageButton btn_repeat = (ImageButton) findViewById(R.id.btn_repeat2);
+        btn_repeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RepeatActivity.class);

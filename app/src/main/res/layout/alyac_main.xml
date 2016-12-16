@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E6BF96"
-    tools:context="com.onedayone.piyagi.RepeatActivity"    >
+    tools:context="com.onedayone.piyagi.AlyacActivity"    >
     <LinearLayout
-        android:id="@+id/top_menu1"
+        android:id="@+id/alyac_top_menu1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="25dp"
         android:layout_alignParentTop="true">
         <ImageButton
-            android:id="@+id/btn_alyac1"
+            android:id="@+id/btn_repeat2"
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -41,15 +41,15 @@
             android:scaleType="fitCenter"
             android:background="#E6BF96"
 />
-    </LinearLayout>
+</LinearLayout>
 
     <LinearLayout
-        android:id="@+id/timepicker1"
+        android:id="@+id/timepicker_alyac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/top_menu1"
+        android:layout_below="@+id/alyac_top_menu1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <LinearLayout
@@ -155,55 +155,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/timepicker1"
+        android:layout_below="@id/timepicker_alyac"
         android:gravity="center"
         android:layout_marginTop="5dp">
 
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_monday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_tuesday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_wednesday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_thursday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_friday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_saturday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
             android:padding="10dp"/>
         <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/week_sunday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
@@ -301,9 +301,9 @@
     <RelativeLayout
         android:id="@+id/bottom_menu1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginTop="10dp"
-        android:padding="30dp"
+        android:padding="10dp"
         android:background="#0F9B8E"
         android:layout_alignParentBottom="true" >
         <ImageButton
