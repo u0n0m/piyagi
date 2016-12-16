@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             adapter.addItem("20분 간격", "가글 하기", ContextCompat.getDrawable(this, R.drawable.circle_off));
         }
 
+
         Integer i;
         for(i=order; i>0;i--){
             repeat_settings = pref_repeat.getString(i.toString(),"fail");

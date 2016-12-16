@@ -1,51 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <View
-            android:id="@+id/repeat_view"
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:background="#AA0E9A8D"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            />
+        android:layout_marginTop="10dp"
+    android:background="#AA0E9A8D">
+
         <TextView
             android:id="@+id/repeat_textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="70dp"
-            android:text="AM 08:30"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="4"
+            android:text="90분 간격"
             android:textColor="#242E2B"
-            android:textSize="20dp"/>
+            android:textSize="19dp"/>
         <TextView
             android:id="@+id/repeat_textview2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_centerVertical="true"
-            android:layout_marginRight="40dp"
-            android:text="AM 08:30"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="안약넣으세요"
             android:textColor="#242E2B"
-            android:textSize="20dp"/>
+            android:textSize="19dp"/>
         <ImageButton
             android:id="@+id/repeat_imagebutton"
-            android:layout_width="45dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
             android:scaleType="fitEnd"
             android:background="#000E9A8D"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
             android:src="@drawable/circle_on"/>
-    </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
