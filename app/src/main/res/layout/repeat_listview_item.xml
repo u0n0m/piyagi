@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
         <View
-            android:id="@+id/alyac_view"
+            android:id="@+id/repeat_view"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
             android:background="#AA0E9A8D"
@@ -17,10 +17,22 @@
             android:layout_marginLeft="10dp"
             />
         <TextView
-            android:id="@+id/repeat_textview"
+            android:id="@+id/repeat_textview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp"
+            android:text="AM 08:30"
+            android:textColor="#242E2B"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/repeat_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
             android:text="AM 08:30"
             android:textColor="#242E2B"
             android:textSize="20dp"/>

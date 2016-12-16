@@ -1,6 +1,7 @@
 package com.onedayone.piyagi;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -51,14 +52,16 @@ public class RepeatListViewAdapter extends BaseAdapter {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.repeat_textview);
+        TextView periodTextView = (TextView) convertView.findViewById(R.id.repeat_textview1);
+        TextView descTextView = (TextView) convertView.findViewById(R.id.repeat_textview2);
         ImageButton imgbtn = (ImageButton) convertView.findViewById(R.id.repeat_imagebutton);
 
         // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
         final RepeatListViewItem listViewItem = listViewItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        titleTextView.setText(listViewItem.getDesc());
+        periodTextView.setText(listViewItem.getperiod());
+        descTextView.setText(listViewItem.getDesc());
         imgbtn.setImageDrawable(listViewItem.getIcon());
 
         imgbtn.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +69,22 @@ public class RepeatListViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 //여기에 메인화며 리스트뷰에 ON버튼을 클릭하면 sharedPreference값을 off로 변경, off버튼을 클릭하면 on으로 변경
                 //그리고 메인화면 리스트뷰 갱신 작업-화면에 바뀐거롤 보이도록 하려고....
-                Toast.makeText(context, "onClick: position="+position, Toast.LENGTH_SHORT).show();
+//                SharedPreferences pref_repeat = context.getSharedPreferences("repeatSettings", Context.MODE_PRIVATE);
+//                Integer order = pref_repeat.getInt("order", 0);
+//                String repeat_settings = pref_repeat.getString(order.toString(),"fail");
+                SharedPreferences pref_repeat = context.getSharedPreferences("repeatSettings", Context.MODE_PRIVATE);
+                String repeat_settings = pref_repeat.getString("2", "fail");
+
+                String [] arr = repeat_settings.split(":");
+                if(arr[3].equals("on")){
+                    repeat_settings = arr[0]+arr[1]+arr[2]+"off";
+                }
+                else if(arr[3].equals("off")){
+                    repeat_settings = arr[0]+arr[1]+arr[2]+"on";
+                }
+
+                //Toast.makeText(context, "onClick: position=" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "setting(onoff)=" + arr[3], Toast.LENGTH_SHORT).show();
                 System.out.println("click");
                 //listViewItem.setIcon(ContextCompat.getDrawable(context, R.drawable.circle_off));
             }
@@ -78,8 +96,8 @@ public class RepeatListViewAdapter extends BaseAdapter {
     public void addItem(String period, String desc, Drawable icon) {
         RepeatListViewItem item = new RepeatListViewItem();
         item.setPeriod(period);
-        item.setIcon(icon);
         item.setDesc(desc);
+        item.setIcon(icon);
         listViewItemList.add(item);
     }
 

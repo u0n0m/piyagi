@@ -136,26 +136,26 @@ public class RepeatActivity extends AppCompatActivity {
         });
     }
 
-    public boolean save_repeat_settings(){
+    public boolean save_repeat_settings(){ // 저장버튼 누르면 실행되는 내용
 
-        TextView textview_repeat_hour = (TextView) findViewById(R.id.textview_repeat_hour);
-        TextView textview_repeat_minute = (TextView) findViewById(R.id.textview_repeat_minute);
+        TextView textview_repeat_hour = (TextView) findViewById(R.id.textview_repeat_hour);  //알람 시간 읽어오기
+        TextView textview_repeat_minute = (TextView) findViewById(R.id.textview_repeat_minute); // 알람 분 읽어오기
         Toast.makeText(getApplicationContext(),"save_repeat_settings!",Toast.LENGTH_SHORT).show();
 
-        SharedPreferences pref_repeat = getApplicationContext().getSharedPreferences("repeatSettings", Context.MODE_PRIVATE);
-        Integer order = pref_repeat.getInt("order", 0);
-        order ++;
+        SharedPreferences pref_repeat = getApplicationContext().getSharedPreferences("repeatSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
+        Integer order = pref_repeat.getInt("order", 0); //알람 번호 읽어오기
+        order ++;  // 알람 번호 증가시키기
         hour1 = parseInt(textview_repeat_hour.getText().toString());
         minute1 = parseInt(textview_repeat_minute.getText().toString());
         total_minutes = hour1 * 60 + minute1;
-        on_off = "on";
+        on_off = "on"; //버튼 상태
         desc = "반복 복용";
-        repeat_settings = order.toString() +":"+ total_minutes.toString() +":"+ on_off +":"+ desc;
+        repeat_settings = order.toString() +":"+ total_minutes.toString() + ":" + desc + ":" + on_off ; //알람번호, 알람주기, 설명, 버튼 상태(on/off)
 
-        SharedPreferences.Editor editor = pref_repeat.edit();
-        editor.putInt("order",order);
-        editor.putString(order.toString(),repeat_settings);
-        editor.commit();
+        SharedPreferences.Editor editor = pref_repeat.edit(); //sharedPreference 내용 수정
+        editor.putInt("order",order);  // 알람 개수 저장
+        editor.putString(order.toString(),repeat_settings); //알람 설정 저장
+        editor.commit(); // 설정 적용
 
         Toast.makeText(getApplicationContext(), "order=" + order.toString(), Toast.LENGTH_SHORT).show();
         Toast.makeText(getApplicationContext(), "sharedPreference=" + repeat_settings, Toast.LENGTH_SHORT).show();

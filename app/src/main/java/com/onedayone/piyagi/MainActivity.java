@@ -67,32 +67,37 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(getApplicationContext(),"오더 번호="+order.toString(),Toast.LENGTH_SHORT).show();
 
         if( order <= 0 ){
-            adapter.addItem("10분 간격", "안약 넣기", ContextCompat.getDrawable(this, R.drawable.circle_on)) ;
-            adapter.addItem("20분 간격", "가글 하기", ContextCompat.getDrawable(this, R.drawable.circle_off)) ;
+            adapter.addItem("10분 간격", "안약 넣기", ContextCompat.getDrawable(this, R.drawable.circle_on));
+            adapter.addItem("20분 간격", "가글 하기", ContextCompat.getDrawable(this, R.drawable.circle_off));
         }
 
         Integer i;
         for(i=order; i>0;i--){
             repeat_settings = pref_repeat.getString(i.toString(),"fail");
-            //셋팅 값에서 콜론을 기준으로 2번째 필드에서 반복주기, 3번째 필드에서 on/off, 4번째 필드에서 설명가져오기
-            adapter.addItem(period, repeat_settings, ContextCompat.getDrawable(this, R.drawable.circle_on)) ;
-            Toast.makeText(getApplicationContext(),"설정값="+repeat_settings, Toast.LENGTH_SHORT).show();
+            String [] field = repeat_settings.split(":");
+            if(field[3].equals("on")) {
+                adapter.addItem(field[1], field[2], ContextCompat.getDrawable(this, R.drawable.circle_on));
+            }
+            else {
+                adapter.addItem(field[1], field[2], ContextCompat.getDrawable(this, R.drawable.circle_off));
+            }
         }
+            //셋팅 값에서 콜론을 기준으로 1번째:번호, 2번째:반복주기, 3번째:on/off, 4번째: 설명
+
+            Toast.makeText(getApplicationContext(),"설정값="+repeat_settings, Toast.LENGTH_SHORT).show();
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 // get item
                 RepeatListViewItem item = (RepeatListViewItem) parent.getItemAtPosition(position);
-//                String titleStr = item.getTitle() ;
-//                String descStr = item.getDesc() ;
+//                String titleStr = item.getTitle();
+//                String descStr = item.getDesc();
                 //item.setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.circle_off));
-                Toast.makeText(getApplicationContext(),"리스트뷰 버튼 클릭됨", Toast.LENGTH_SHORT).show();
-                // TODO : use item data.
+                //Toast.makeText(getApplicationContext(),"리스트뷰 버튼 클릭됨", Toast.LENGTH_SHORT).show();
             }
-        }) ;
-
-    }
+        });
+     }
 
     public void alyac_listview(){
         ListView listview ;
