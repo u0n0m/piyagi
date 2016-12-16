@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true">
         <ImageButton
             android:id="@+id/btn_repeat2"
             android:layout_width="60dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/repeat_sign2"
@@ -25,7 +25,7 @@
         <ImageButton
             android:id="@+id/btn_alyac2"
             android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/alyac2"
@@ -34,7 +34,7 @@
         <ImageButton
             android:id="@+id/btn_hospital2"
             android:layout_width="95dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/hospital"
@@ -165,49 +165,52 @@
             android:src="@drawable/week_monday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_tuesday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_wednesday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_thursday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
+
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_friday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
+
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_saturday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
+
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/week_sunday"
             android:scaleType="fitCenter"
             android:background="#E6BF96"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
     </LinearLayout>
     <ImageView
         android:id="@+id/alarm_sound1"
@@ -226,7 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/alarm_sound1"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp">
         <ImageView
             android:layout_width="25dp"
             android:layout_height="21dp"
@@ -260,7 +263,7 @@
             android:layout_width="200dp"
             android:layout_height="21dp"
             android:src="@drawable/repeat_alarm_text3"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_centerVertical="true" />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -298,17 +301,20 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="70dp"/>
     </LinearLayout>
+
+
     <RelativeLayout
         android:id="@+id/bottom_menu1"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="70dp"
         android:padding="10dp"
         android:background="#0F9B8E"
-        android:layout_alignParentBottom="true" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <ImageButton
-            android:id="@+id/btn_save"
-            android:layout_width="80dp"
+            android:id="@+id/alyac_btn_save"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
@@ -318,19 +324,21 @@
             android:scaleType="fitCenter"
             android:background="#0F9B8E"/>
         <ImageButton
-            android:id="@+id/btn_cancel"
-            android:layout_width="80dp"
+            android:id="@+id/alyac_btn_cancel"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/btn_save"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/alyac_btn_save"
             android:layout_marginLeft="50dp"
             android:src="@drawable/btn_cancel"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:background="#0F9B8E"/>
     </RelativeLayout>
+
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="130dp"
+        android:layout_width="70dp"
+        android:layout_height="110dp"
         android:layout_margin="8dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"

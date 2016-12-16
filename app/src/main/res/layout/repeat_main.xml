@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true">
         <ImageButton
             android:id="@+id/btn_repeat"
             android:layout_width="60dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/repeat_sign"
@@ -26,7 +26,7 @@
         <ImageButton
             android:id="@+id/btn_alyac"
             android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/alyac"
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/btn_hospital"
             android:layout_width="95dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/hospital"
@@ -209,7 +209,7 @@
             android:layout_marginLeft="77dp"/>
     </LinearLayout>
     <RelativeLayout
-        android:id="@+id/bottom_menu1"
+        android:id="@+id/repeat_bottom_menu1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
@@ -217,7 +217,7 @@
         android:background="#0F9B8E"
         android:layout_alignParentBottom="true" >
         <ImageButton
-            android:id="@+id/btn_save"
+            android:id="@+id/repeat_btn_save"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -228,11 +228,11 @@
             android:scaleType="fitCenter"
             android:background="#0F9B8E"/>
         <ImageButton
-            android:id="@+id/btn_cancel"
+            android:id="@+id/repeat_btn_cancel"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/btn_save"
+            android:layout_toRightOf="@id/repeat_btn_save"
             android:layout_marginLeft="50dp"
             android:src="@drawable/btn_cancel"
             android:adjustViewBounds="true"
@@ -240,8 +240,8 @@
             android:background="#0F9B8E"/>
     </RelativeLayout>
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_margin="8dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"

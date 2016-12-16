@@ -115,7 +115,7 @@ public class RepeatActivity extends AppCompatActivity {
         });
 
         //저장 버튼 클릭
-        ImageButton btn_save = (ImageButton) findViewById(R.id.btn_save);
+        ImageButton btn_save = (ImageButton) findViewById(R.id.repeat_btn_save);
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,7 +125,7 @@ public class RepeatActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ImageButton btn_cancel = (ImageButton) findViewById(R.id.btn_cancel);
+        ImageButton btn_cancel = (ImageButton) findViewById(R.id.repeat_btn_cancel);
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
