@@ -349,9 +349,9 @@
     <RelativeLayout
         android:id="@+id/bottom_menu1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:padding="30dp"
+        android:padding="10dp"
         android:background="#0F9B8E"
         android:layout_alignParentBottom="true" >
         <ImageButton

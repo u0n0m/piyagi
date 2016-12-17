@@ -20,6 +20,7 @@ public class SplashActivity extends Activity{
 
             @Override
             public void run() {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();       // 3 초후 이미지를 닫아버림
             }
         }, 2000);
