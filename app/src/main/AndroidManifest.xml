@@ -21,33 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RepeatActivity"
-            android:label="RepeatActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
-        <activity
-            android:name=".AlyacActivity"
-            android:label="AlyacActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
-        <activity
-            android:name=".HospitalActivity"
-            android:label="HospitalActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
-        <activity
-            android:name=".RepeatAlarmActivity"
-            android:exported="true"
-            android:enabled="true">
-        </activity>
-        <service android:name=".RepeatService"
-            android:enabled="true"
-            android:exported="true" >
-        </service>
     </application>
 
 </manifest>
