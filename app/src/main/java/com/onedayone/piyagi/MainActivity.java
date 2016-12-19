@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        repeat_listview();
-        alyac_listview();
-        hospital_listview();
+//        repeat_listview();
+//        alyac_listview();
+//        hospital_listview();
 
         ImageButton btn_add = (ImageButton) findViewById(R.id.btn_add1);
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RepeatActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HospitalActivity.class);
                 startActivity(intent);
                 finish();
             }
