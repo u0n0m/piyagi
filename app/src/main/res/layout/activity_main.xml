@@ -36,7 +36,7 @@
         android:id="@+id/main_alyac_list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="60dp"
+        android:paddingTop="70dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -165,7 +165,7 @@
         android:id="@+id/main_repeat_list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
+        android:paddingTop="60dp"
         android:orientation="vertical"
         android:layout_below="@+id/main_alyac_list1"
         android:layout_alignParentLeft="true"
@@ -207,7 +207,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_repeat_list1"
-        android:paddingTop="30dp"
+        android:paddingTop="60dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -277,5 +277,25 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_btn1"
+        android:src="@drawable/alyac2"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        android:padding="12dp"
+        android:layout_marginTop="310dp"
+        android:background="@drawable/round_btn1"
+        android:src="@drawable/repeat_sign"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        android:padding="12dp"
+        android:layout_marginTop="510dp"
+        android:background="@drawable/round_btn1"
+        android:src="@drawable/repeat_sign"/>
 </RelativeLayout>
