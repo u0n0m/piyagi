@@ -29,7 +29,7 @@ public class RepeatService extends Service  {
         Integer second = Integer.parseInt(intent.getStringExtra("total_minutes")) * 60 * 100; // 10분의 1 간격으로 작동,  알람작동 확인이 오래걸려서
         Toast.makeText(this, second.toString(), Toast.LENGTH_SHORT).show();
         //alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + second, pIntent);
-        alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, second, second, pIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, second, second, pIntent);
         return super.onStartCommand(intent, flags, startId);
     }
 
