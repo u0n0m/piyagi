@@ -49,7 +49,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="5dp"
             android:text="㈜명인제약"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textStyle="bold"
             android:textColor="#EB5A3D"/>
         <TextView
@@ -58,7 +58,7 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="과 "
-            android:textSize="12dp"
+            android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="#000000"/>
         <TextView
@@ -67,7 +67,7 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="㈜환인제약"
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textColor="#3C19EB"
             android:textStyle="bold"/>
         <TextView
@@ -76,7 +76,7 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="의 소중한 지원금으로 제작되었습니다."
-            android:textSize="12dp"
+            android:textSize="13dp"
             android:textColor="#000000"/>
 
     </LinearLayout>
