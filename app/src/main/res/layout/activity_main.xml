@@ -13,38 +13,47 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/piyagi1"
         android:adjustViewBounds="true" />
-    <ImageView
-        android:layout_width="165dp"
-        android:layout_height="75dp"
-        android:layout_below="@id/main_background_piyagi1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="5dp"
-        android:src="@drawable/piyagi_text1"
-        android:background="#F1F1F1"/>
     <ImageView
         android:id="@+id/main_background_piyagi2"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_background_piyagi1"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="11dp"
         android:src="@drawable/piyagi3"
-        android:adjustViewBounds="true"/>
-    <LinearLayout
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/main_alyac_list1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RelativeLayout
         android:id="@+id/main_alyac_list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="70dp"
-        android:orientation="vertical">
-
+        android:paddingTop="50dp">
+        <ImageView
+            android:id="@+id/blank_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent" />
         <RelativeLayout
+            android:id="@+id/main_alyac_menu1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sunrise"
+                android:adjustViewBounds="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"/>
             <TextView
                 android:id="@+id/alyac_textview1"
                 android:layout_width="wrap_content"
@@ -54,28 +63,39 @@
                 android:text="오전 08:30"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn1"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/circle_btn1"
                 android:text="켜짐"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:typeface="monospace"/>
         </RelativeLayout>
-
         <RelativeLayout
+            android:id="@+id/main_alyac_menu2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/main_alyac_menu1"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sun"
+                android:adjustViewBounds="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"/>
             <TextView
                 android:id="@+id/alyac_textview2"
                 android:layout_width="wrap_content"
@@ -85,27 +105,39 @@
                 android:text="오후 01:00"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn2"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/circle_btn1"
                 android:text="켜짐"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:typeface="monospace"/>
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/main_alyac_menu3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/main_alyac_menu2"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sunset"
+                android:adjustViewBounds="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"/>
             <TextView
                 android:id="@+id/alyac_textview3"
                 android:layout_width="wrap_content"
@@ -115,27 +147,41 @@
                 android:text="오후 06:30"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn3"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/circle_btn1"
                 android:text="켜짐"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:typeface="monospace" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/main_alyac_menu4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/main_alyac_menu3"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/half_moon"
+                android:adjustViewBounds="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"/>
             <TextView
                 android:id="@+id/alyac_textview4"
                 android:layout_width="wrap_content"
@@ -145,83 +191,53 @@
                 android:text="오후 11:00"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn4"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/circle_btn1"
                 android:text="켜짐"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:typeface="monospace"/>
         </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/main_repeat_list1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="60dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/main_alyac_list1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#88D4C7">
-            <TextView
-                android:id="@+id/repeat_textview1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_margin="15dp"
-                android:text="오전 10:00부터 \n   4시간 마다"
-                android:textColor="#242E2B"
-                android:textSize="19dp"
-                android:maxLength="55"
-                android:textStyle="bold"/>
-            <Button
-                android:id="@+id/repeat_button1"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/circle_btn1"
-                android:text="켜짐"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                android:textColor="#000000"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/main_hospital_list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_repeat_list1"
-        android:paddingTop="60dp"
+        android:layout_below="@+id/main_repeat_list1"
+        android:paddingTop="5dp"
         android:orientation="vertical">
-
+        <ImageView
+            android:id="@+id/blank_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent" />
         <RelativeLayout
+            android:id="@+id/hospital_menu1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_below="@id/blank_view2"
             android:background="#88D4C7">
             <LinearLayout
+                android:id="@+id/hospital_list1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_centerInParent="true"
-                android:padding="10dp">
+                android:padding="7dp">
                 <TextView
                     android:id="@+id/hospital_textview1"
                     android:layout_width="wrap_content"
@@ -230,7 +246,8 @@
                     android:text="2017/01/15"
                     android:textColor="#242E2B"
                     android:textSize="19dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:typeface="monospace"/>
                 <TextView
                     android:id="@+id/hospital_textview2"
                     android:layout_width="wrap_content"
@@ -239,7 +256,8 @@
                     android:text="오전 11:00"
                     android:textColor="#242E2B"
                     android:textSize="19dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:typeface="monospace"/>
                 <TextView
                     android:id="@+id/hospital_textview3"
                     android:layout_width="wrap_content"
@@ -248,54 +266,139 @@
                     android:text="사랑병원 재활의학과"
                     android:textColor="#242E2B"
                     android:textSize="19dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:typeface="monospace"/>
             </LinearLayout>
             <Button
                 android:id="@+id/hospital_button1"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/circle_btn1"
                 android:text="켜짐"
-                android:textSize="14dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:typeface="monospace"/>
 
         </RelativeLayout>
-    </LinearLayout>
 
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="65dp"
+            android:padding="9dp"
+            android:background="@drawable/round_btn1"
+            android:src="@drawable/hospital2"
+            android:layout_alignBottom="@id/hospital_menu1"
+            android:layout_marginBottom="35dp"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        android:padding="9dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_btn1"
+        android:src="@drawable/alyac2"/>
 
     <ImageView
         android:id="@+id/main_background_piyagi3"
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:src="@drawable/piyagi2"
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true" />
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="65dp"
-        android:padding="5dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/round_btn1"
-        android:src="@drawable/alyac2"/>
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="65dp"
-        android:padding="12dp"
-        android:layout_marginTop="310dp"
-        android:background="@drawable/round_btn1"
-        android:src="@drawable/repeat_sign"/>
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="65dp"
-        android:padding="12dp"
-        android:layout_marginTop="510dp"
-        android:background="@drawable/round_btn1"
-        android:src="@drawable/repeat_sign"/>
+    <Button
+        android:layout_width="85dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_plus_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center|center_horizontal"
+        android:text="+"
+        android:textSize="40dp"
+        android:textColor="#000000"
+        android:typeface="monospace"/>
+
+    <RelativeLayout
+        android:id="@+id/main_repeat_list1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/main_alyac_list1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/main_background_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
+            android:layout_below="@+id/splash_text1"
+            android:src="@drawable/piyagi_text1" />
+
+        <RelativeLayout
+            android:id="@+id/repeat_menu1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_background_text1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#88D4C7">
+            <TextView
+                android:id="@+id/repeat_textview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="11dp"
+                android:text="오전 10:00부터 \n   4시간 마다"
+                android:textColor="#242E2B"
+                android:textSize="19dp"
+                android:maxLength="55"
+                android:textStyle="bold"
+                android:typeface="monospace"/>
+            <Button
+                android:id="@+id/repeat_button1"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/circle_btn1"
+                android:text="켜짐"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:typeface="monospace"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="65dp"
+            android:padding="13dp"
+            android:layout_alignBottom="@id/repeat_menu1"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/round_btn1"
+            android:src="@drawable/repeat_sign"/>
+
+        <ImageView
+            android:id="@+id/splash_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/splash_text1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
 </RelativeLayout>
