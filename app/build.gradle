@@ -23,9 +23,9 @@ android {
     }
     signingConfigs {
         config {
-            keyPassword '1234'
+            keyPassword '123456'
             storeFile file('/Users/xxx/개발키및툴/comostudio.jks')
-            storePassword '1234'
+            storePassword '123456'
             keyAlias 'comostudio_release_key'
         }
     }

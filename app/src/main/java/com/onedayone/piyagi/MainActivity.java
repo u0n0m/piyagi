@@ -1,23 +1,28 @@
 package com.onedayone.piyagi;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    static final String FILE_NAME = "repeat_settings.value";
     Integer repeat_hour = 1;
     Integer repeat_minute = 10;
     Integer hour1;
@@ -35,7 +40,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+        Toast.makeText(getApplicationContext(), "Width="+width+", Height="+height,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "ScreenSize="+getScreenSize(activity_main)
+
+        RelativeLayout morning = (RelativeLayout) findViewById(R.id.main_alyac_list1);
+        morning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
+
+    //화면 해상도 구해서 토스트 메시지로 띄워주기
+    public Point getScreenSize(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return  size;
+    }
 
 }

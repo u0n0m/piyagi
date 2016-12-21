@@ -47,8 +47,9 @@
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
             <ImageView
+                android:id="@+id/alyac_morning_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:src="@drawable/sunrise"
                 android:adjustViewBounds="true"
                 android:layout_alignParentLeft="true"
@@ -58,17 +59,20 @@
                 android:id="@+id/alyac_textview1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_margin="10dp"
+                android:layout_toRightOf="@id/alyac_morning_logo"
+                android:layout_centerVertical="true"
                 android:text="오전 08:30"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
                 android:textStyle="bold"
-                android:typeface="monospace"/>
+                android:typeface="monospace"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
             <Button
                 android:id="@+id/alyac_btn1"
-                android:layout_width="49dp"
-                android:layout_height="49dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
@@ -89,8 +93,9 @@
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
             <ImageView
+                android:id="@+id/alyac_day_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:src="@drawable/sun"
                 android:adjustViewBounds="true"
                 android:layout_alignParentLeft="true"
@@ -100,7 +105,8 @@
                 android:id="@+id/alyac_textview2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/alyac_day_logo"
+                android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:text="오후 01:00"
                 android:textColor="#242E2B"
@@ -109,8 +115,8 @@
                 android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn2"
-                android:layout_width="49dp"
-                android:layout_height="49dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
@@ -131,8 +137,9 @@
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
             <ImageView
+                android:id="@+id/alyac_evening_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:src="@drawable/sunset"
                 android:adjustViewBounds="true"
                 android:layout_alignParentLeft="true"
@@ -142,7 +149,8 @@
                 android:id="@+id/alyac_textview3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/alyac_evening_logo"
+                android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:text="오후 06:30"
                 android:textColor="#242E2B"
@@ -151,8 +159,8 @@
                 android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn3"
-                android:layout_width="49dp"
-                android:layout_height="49dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
@@ -173,8 +181,9 @@
             android:layout_marginRight="20dp"
             android:background="#88D4C7">
             <ImageView
+                android:id="@+id/alyac_night_logo"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="38dp"
                 android:src="@drawable/half_moon"
                 android:adjustViewBounds="true"
                 android:layout_alignParentLeft="true"
@@ -186,7 +195,8 @@
                 android:id="@+id/alyac_textview4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/alyac_night_logo"
+                android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:text="오후 11:00"
                 android:textColor="#242E2B"
@@ -195,8 +205,8 @@
                 android:typeface="monospace"/>
             <Button
                 android:id="@+id/alyac_btn4"
-                android:layout_width="49dp"
-                android:layout_height="49dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
@@ -242,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_margin="11dp"
-                android:text="오전 10:00부터 \n   4시간 마다"
+                android:text="오전 10:00부터 \n  4시간 마다"
                 android:textColor="#242E2B"
                 android:textSize="19dp"
                 android:maxLength="55"
@@ -265,11 +275,11 @@
         <ImageView
             android:layout_width="85dp"
             android:layout_height="60dp"
-            android:padding="13dp"
+            android:padding="15dp"
             android:layout_alignBottom="@id/repeat_menu1"
             android:layout_marginBottom="25dp"
             android:background="@drawable/round_btn1"
-            android:src="@drawable/repeat_sign"/>
+            android:src="@drawable/repeat_logo_black"/>
 
         <ImageView
             android:id="@+id/splash_text1"
@@ -364,18 +374,18 @@
             android:layout_height="60dp"
             android:padding="9dp"
             android:background="@drawable/round_btn1"
-            android:src="@drawable/hospital2"
+            android:src="@drawable/hospital_logo_black"
             android:layout_alignBottom="@id/hospital_menu1"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="45dp"/>
     </RelativeLayout>
 
     <ImageView
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:padding="9dp"
+        android:padding="11dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/round_btn1"
-        android:src="@drawable/alyac2"/>
+        android:src="@drawable/alyac_logo_black"/>
 
     <ImageView
         android:id="@+id/main_background_piyagi3"

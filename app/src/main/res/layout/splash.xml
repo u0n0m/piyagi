@@ -37,47 +37,51 @@
         android:id="@+id/splash_bottom1"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:padding="0dp"
         android:background="#88D4C7"
         android:layout_alignParentBottom="true"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginBottom="5dp"
             android:text="㈜명인제약"
-            android:textSize="16dp"
+            android:textSize="13dp"
             android:textStyle="bold"
-            android:textColor="#EB5A3D"/>
+            android:textColor="#EB5A3D"
+            android:typeface="monospace"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="과 "
-            android:textSize="15dp"
+            android:textSize="13dp"
             android:textStyle="bold"
-            android:textColor="#000000"/>
+            android:textColor="#000000"
+            android:typeface="monospace"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="㈜환인제약"
-            android:textSize="16dp"
+            android:textSize="12dp"
             android:textColor="#3C19EB"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:typeface="monospace"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
             android:text="의 소중한 지원금으로 제작되었습니다."
-            android:textSize="13dp"
-            android:textColor="#000000"/>
+            android:textSize="12dp"
+            android:textColor="#000000"
+            android:typeface="monospace"/>
 
     </LinearLayout>
 

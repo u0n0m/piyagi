@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.onedayone.piyagi.SplashActivity"    >
+
+    <LinearLayout
+        android:id="@+id/splash_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#88D4C7"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/alyac_morning_alarm_bottom1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="90dp"
+            android:text="오늘도 건강한 하루였죠?"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:shadowColor="#464646"
+            android:shadowDx="3"
+            android:shadowDy="2"
+            android:shadowRadius="1.5"
+            android:layout_centerHorizontal="true"/>
+
+    </LinearLayout>
+    <ImageButton
+        android:layout_width="135dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/round_btn4"
+        android:src="@drawable/myungin_logo_ok"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/alyac_morning_alarm_bottom1"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:id="@+id/alyac_morning_alarm_bottom1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/splash_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:src="@drawable/splash_text1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent" />
+        <ImageView
+            android:id="@+id/splash_text2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/piyagi_text1"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
