@@ -8,7 +8,7 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_alyac_morning_setting);
-        setContentView(R.layout.activity_alyac_morning_alarm);
+        setContentView(R.layout.activity_alyac_evening_setting);
+        //setContentView(R.layout.activity_alyac_evening_alarm);
     }
 }

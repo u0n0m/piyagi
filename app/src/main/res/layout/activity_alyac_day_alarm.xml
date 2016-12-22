@@ -31,7 +31,11 @@
             android:shadowDy="2"
             android:shadowRadius="1.5"
             android:layout_centerHorizontal="true"/>
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/temp5"/>
     </LinearLayout>
     <ImageButton
         android:layout_width="135dp"

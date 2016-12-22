@@ -11,7 +11,7 @@
         android:id="@+id/splash_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#88D4C7"
+        android:background="#F1F1F1"
         android:layout_alignParentTop="true"
         android:layout_above="@+id/alyac_morning_alarm_bottom1"
         android:orientation="vertical">
@@ -20,8 +20,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginTop="90dp"
-            android:text="오늘 하루도"
-            android:textColor="#FFFFFF"
+            android:text="내일 이 시간에 만나요~"
+            android:textColor="#88D4C7"
             android:textSize="30dp"
             android:textStyle="bold"
             android:typeface="monospace"
@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="건강하게 시작하세요~!"
-            android:textColor="#FFFFFF"
-            android:textSize="30dp"
+            android:text="OO병원 OO과\n00시OO분"
+            android:textColor="#88D4C7"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:typeface="monospace"
             android:shadowColor="#464646"
@@ -49,14 +49,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/temp4"/>
+            android:src="@drawable/temp1"/>
+
     </LinearLayout>
     <ImageButton
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
         android:padding="10dp"
-        android:background="@drawable/round_btn4"
+        android:background="@drawable/round_btn5"
         android:src="@drawable/myungin_logo_ok"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
@@ -67,7 +68,7 @@
         android:id="@+id/alyac_morning_alarm_bottom1"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#FFFFFF"
+        android:background="#88D4C7"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:orientation="vertical">
@@ -85,7 +86,6 @@
             android:src="@drawable/piyagi_text1"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />
-
 
     </LinearLayout>
 

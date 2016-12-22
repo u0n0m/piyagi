@@ -46,13 +46,40 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Width="+width+", Height="+height,Toast.LENGTH_SHORT).show();
         //Toast.makeText(getApplicationContext(), "ScreenSize="+getScreenSize(activity_main)
 
-        RelativeLayout morning = (RelativeLayout) findViewById(R.id.main_alyac_list1);
+        RelativeLayout morning = (RelativeLayout) findViewById(R.id.main_alyac_menu1);
         morning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
                 startActivity(intent);
-                finish();
+                //finish();
+            }
+        });
+        RelativeLayout day = (RelativeLayout) findViewById(R.id.main_alyac_menu2);
+        day.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AlyacDaySettingActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+        RelativeLayout evening = (RelativeLayout) findViewById(R.id.main_alyac_menu3);
+        evening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AlyacEveningSettingActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+        RelativeLayout night = (RelativeLayout) findViewById(R.id.main_alyac_menu4);
+        night.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AlyacNightSettingActivity.class);
+                startActivity(intent);
+                //finish();
             }
         });
     }
