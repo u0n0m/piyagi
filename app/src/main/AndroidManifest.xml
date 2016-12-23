@@ -8,9 +8,7 @@
         android:label="삐약이"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -21,12 +19,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlyacMorningSettingActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AlyacMorningSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AlyacMorningAlarmActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AlyacDaySettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AlyacEveningSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".AlyacNightSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".HospitalSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".RepeatSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Animate1Activity"
+            android:exported="true"></activity>
+
     </application>
     <supports-screens
         android:resizeable="true"
         android:requiresSmallestWidthDp="900"
-
         android:largestWidthLimitDp="1200"
         android:xlargeScreens="true"></supports-screens>
 </manifest>

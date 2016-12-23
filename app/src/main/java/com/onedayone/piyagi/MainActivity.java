@@ -35,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //startActivity(new Intent(this, SplashActivity.class));
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    startActivity(new Intent(this, Animate1Activity.class));
 
+        /*
         DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
         int width = dm.widthPixels;
         int height = dm.heightPixels;
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 //finish();
             }
-        });
+        });*/
     }
 
 

@@ -62,7 +62,7 @@
             android:id="@+id/splash_text2"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:src="@drawable/piyagi_text1"
+            android:src="@drawable/piyagi_text"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />
 
