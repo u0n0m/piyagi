@@ -85,10 +85,39 @@
             android:typeface="monospace"/>
 
     </LinearLayout>
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/splash_animation_imageview"
+        android:id="@+id/splash_piyagi1"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="20dp"
         android:adjustViewBounds="true"
-        android:layout_centerInParent="true"/>
+        android:scaleType="fitCenter"
+        android:src="@drawable/piyagi1"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/alarm_piyagi2"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="70dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/piyagi2" />
+    <ImageView
+        android:id="@+id/alarm_piyagi3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="115dp"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/piyagi3"
+        android:background="@android:color/transparent" />
 </RelativeLayout>

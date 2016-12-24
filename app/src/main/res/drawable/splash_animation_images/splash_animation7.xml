@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/a0061_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0062_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0063_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0064_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0065_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0066_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0067_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0068_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0069_360_203" android:duration="150"/>
+
+</animation-list>

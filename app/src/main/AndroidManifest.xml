@@ -43,9 +43,6 @@
         <activity
             android:name=".RepeatSettingActivity"
             android:exported="true"></activity>
-        <activity
-            android:name=".Animate1Activity"
-            android:exported="true"></activity>
 
     </application>
     <supports-screens
