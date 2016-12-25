@@ -63,7 +63,7 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:id="@+id/alyac_morning_btn"
+            android:id="@+id/alyac_morning_save"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -111,6 +111,7 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:id="@+id/btn_alyac_morning_ampm_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
@@ -118,6 +119,7 @@
                     android:background="#00000000"/>
 
                 <TextView
+                    android:id="@+id/textview_alyac_morning_ampm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="오전"
@@ -127,6 +129,7 @@
                     android:layout_margin="8dp"/>
 
                 <ImageButton
+                    android:id="@+id/btn_alyac_morning_ampm_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -142,14 +145,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_up"
+                    android:id="@+id/btn_alyac_morning_hour_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_hour"
+                    android:id="@+id/textview_alyac_morning_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
@@ -158,7 +161,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_down"
+                    android:id="@+id/btn_alyac_morning_hour_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -182,14 +185,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_up"
+                    android:id="@+id/btn_alyac_morning_minute_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_minute"
+                    android:id="@+id/textview_alyac_morning_minute"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30"
@@ -198,7 +201,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_down"
+                    android:id="@+id/btn_alyac_morning_minute_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"

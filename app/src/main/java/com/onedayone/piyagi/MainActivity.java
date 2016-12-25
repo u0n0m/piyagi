@@ -39,13 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //startActivity(new Intent(this, Animate1Activity.class));
 
-        DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-        Toast.makeText(getApplicationContext(), "Width="+width+", Height="+height,Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getApplicationContext(), "ScreenSize="+getScreenSize(activity_main)
+        SharedPreferences pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE);
+        String morning_settings = pref_alyac.getString("morning", "설정 안됨");
+        Toast.makeText(getApplicationContext(), "read2 alyacSettings > morning)=" + morning_settings, Toast.LENGTH_LONG).show();
+        TextView tv = (TextView) findViewById(R.id.textview_alyac_morning_datetime1);
+        tv.setText(morning_settings);
 
         RelativeLayout morning = (RelativeLayout) findViewById(R.id.main_alyac_menu1);
         morning.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +52,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
                 startActivity(intent);
-                Handler hd = new Handler();
-                hd.postDelayed(new Runnable() {
+                System.gc();
+                //finish();
 
-                    @Override
-                    public void run() {
-                        System.gc();
-                        finish();       // 1 초후 이미지를 닫아버림
-                    }
-                }, 1000);
             }
         });
         RelativeLayout day = (RelativeLayout) findViewById(R.id.main_alyac_menu2);
@@ -70,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacDaySettingActivity.class);
                 startActivity(intent);
+                System.gc();
                 //finish();
             }
         });
@@ -79,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacEveningSettingActivity.class);
                 startActivity(intent);
+                System.gc();
                 //finish();
             }
         });
@@ -88,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacNightSettingActivity.class);
                 startActivity(intent);
+                System.gc();
                 //finish();
             }
         });
@@ -96,26 +92,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        finish();
+        System.gc();
+        //finish();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        System.gc();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-
-
-    //화면 해상도 구해서 토스트 메시지로 띄워주기
-    public Point getScreenSize(Activity activity) {
-        Display display = activity.getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        return  size;
+        System.gc();
     }
 
 }

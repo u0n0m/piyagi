@@ -28,6 +28,10 @@
         <activity
             android:name=".AlyacMorningAlarmActivity"
             android:exported="true"></activity>
+        <service android:name=".AlyacMorningService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
         <activity
             android:name=".AlyacDaySettingActivity"
             android:exported="true"></activity>

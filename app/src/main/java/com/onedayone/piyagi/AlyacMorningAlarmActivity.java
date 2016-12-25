@@ -25,14 +25,8 @@ public class AlyacMorningAlarmActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                System.gc();
                 finish();
-//                Handler hd = new Handler();
-//                hd.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        finish();       // 3 초후 이미지를 닫아버림
-//                    }
-//                }, 8500);
             }
         });
 
@@ -41,17 +35,20 @@ public class AlyacMorningAlarmActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
+        System.gc();
         finish();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        System.gc();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        System.gc();
     }
 
     @Override
@@ -114,6 +111,7 @@ public class AlyacMorningAlarmActivity extends AppCompatActivity {
             }, 7900);
         } else {
             frameAnimation.stop();
+            System.gc();
             finish();
         }
     }
