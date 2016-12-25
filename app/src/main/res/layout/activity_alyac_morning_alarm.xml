@@ -46,14 +46,15 @@
             android:shadowRadius="1.5"
             android:layout_centerHorizontal="true"/>
         <ImageView
+            android:id="@+id/alyac_morning_animation_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageAnimation100"
             android:adjustViewBounds="true"
             android:layout_centerInParent="true"/>
     </LinearLayout>
 
     <ImageButton
+        android:id="@+id/alyac_morning_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
@@ -84,7 +85,6 @@
             android:src="@drawable/piyagi_text"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />
-
 
     </LinearLayout>
 

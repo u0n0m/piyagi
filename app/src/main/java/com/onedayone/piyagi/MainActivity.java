@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -36,11 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //startActivity(new Intent(this, Animate1Activity.class));
-
 
         DisplayMetrics dm = getApplicationContext().getResources().getDisplayMetrics();
         int width = dm.widthPixels;
@@ -54,7 +53,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
                 startActivity(intent);
-                //finish();
+                Handler hd = new Handler();
+                hd.postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        System.gc();
+                        finish();       // 1 초후 이미지를 닫아버림
+                    }
+                }, 1000);
             }
         });
         RelativeLayout day = (RelativeLayout) findViewById(R.id.main_alyac_menu2);
@@ -84,6 +91,22 @@ public class MainActivity extends AppCompatActivity {
                 //finish();
             }
         });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 

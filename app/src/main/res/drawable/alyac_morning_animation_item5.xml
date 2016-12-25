@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/intera0041_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0042_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0043_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0044_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0045_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0046_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0047_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0048_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0049_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/intera0050_360_203" android:duration="150"/>
+
+</animation-list>
