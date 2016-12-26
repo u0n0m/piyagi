@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         String morning_hour_setting = pref_alyac.getString("morning_hour", "복약시 설정안됨");
         String morning_minute_setting = pref_alyac.getString("morning_minute", "복약분 설정안됨");
         final String morning_onoff_setting = pref_alyac.getString("morning_onoff", "설정상태 설정안됨");
-        Toast.makeText(getApplicationContext(), "read2 morning_onoff)=" + morning_onoff_setting, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "read2 morning_onoff)=" + morning_onoff_setting, Toast.LENGTH_LONG).show();
 
         // 설정 읽어서 복용 시간 표시
         String morning_settings = morning_ampm_setting + " " + morning_hour_setting + ":" + morning_minute_setting;
