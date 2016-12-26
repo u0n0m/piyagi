@@ -184,7 +184,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
         String ampm = textview_alyac_morning_ampm.getText().toString();
         String hour = textview_alyac_morning_hour.getText().toString();
         String minute = textview_alyac_morning_minute.getText().toString();
-        String onoff = "on"; //설정 상태
+        String onoff = "켜짐"; //설정 상태
         String alyac_morning_settings = ampm + ":" + hour + ":" + minute + ":" + onoff ; //오전/오후, 알람시간, 알람분, 설정 상태(on/off)
         Toast.makeText(getApplicationContext(), "read variable alyac_morning_settings =" + alyac_morning_settings, Toast.LENGTH_LONG).show();
 
@@ -195,11 +195,11 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
         editor.putString("morning_minute",minute); //아침약 알람 설정 저장
         editor.putString("morning_onoff",onoff); //아침약 알람 설정 저장
         editor.commit(); // 설정 적용
-
+/*
         pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE);
-        String morning_settings = pref_alyac.getString("morning_ampm", "오전/오후 설정안됨");
-        Toast.makeText(getApplicationContext(), "read1 alyacSettings > morning)=" + morning_settings, Toast.LENGTH_LONG).show();
-
+        String morning_ampm = pref_alyac.getString("morning_ampm", "오전/오후 설정안됨");
+        Toast.makeText(getApplicationContext(), "read1 morning_ampm)=" + morning_ampm, Toast.LENGTH_LONG).show();
+*/
         Intent intent = new Intent(this, AlyacMorningService.class);
         intent.putExtra("morning", String.valueOf(alyac_morning_settings));
         startService(intent);

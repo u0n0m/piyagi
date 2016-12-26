@@ -28,7 +28,7 @@ public class SplashActivity extends Activity{
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();       // ?? 초후 닫아버림
             }
-        }, 11000);
+        }, 9300);
 
     }
 
@@ -77,7 +77,7 @@ public class SplashActivity extends Activity{
                     frameAnimation = (AnimationDrawable) view.getBackground();
                     frameAnimation.start();
                 }
-            }, 5250);
+            }, 5200);
             hd.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -86,7 +86,7 @@ public class SplashActivity extends Activity{
 //                    frameAnimation = (AnimationDrawable) view.getBackground();
 //                    frameAnimation.start();
                 }
-            }, 4500);
+            }, 8970);
 //            hd.postDelayed(new Runnable() {
 //                @Override
 //                public void run() {
