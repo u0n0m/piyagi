@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_alyac_morning_setting"
+    android:id="@+id/activity_repeat_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.onedayone.piyagi.AlyacMorningSettingActivity"
+    tools:context="com.onedayone.piyagi.RepeatSettingActivity"
     android:background="#FFFFFF">
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,12 +93,12 @@
             android:textStyle="bold"/>
 
         <LinearLayout
-            android:id="@+id/timepicker_alyac_morning"
+            android:id="@+id/timepicker_repeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="3dp"
-            android:layout_below="@+id/alyac_top_menu1"
+            android:layout_below="@+id/repeat_top_menu1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
             <LinearLayout
@@ -141,14 +141,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_up"
+                    android:id="@+id/btn_repeat_hour_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_hour"
+                    android:id="@+id/textview_repeat_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
@@ -157,7 +157,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_down"
+                    android:id="@+id/btn_repeat_hour_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -181,14 +181,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_up"
+                    android:id="@+id/btn_repeat_minute_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_minute"
+                    android:id="@+id/textview_repeat_minute"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30"
@@ -197,7 +197,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_down"
+                    android:id="@+id/btn_repeat_minute_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -221,14 +221,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_up"
+                    android:id="@+id/btn_repeat_period_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_minute"
+                    android:id="@+id/textview_repeat_period"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4"
@@ -237,7 +237,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_down"
+                    android:id="@+id/btn_repeat_period_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -308,7 +308,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <SeekBar
-                android:id="@+id/alyac_volume"
+                android:id="@+id/repeat_volume"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

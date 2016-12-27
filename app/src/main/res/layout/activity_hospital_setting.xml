@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_hospital_morning_setting"
+    android:id="@+id/activity_hospital_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.onedayone.piyagi.AlyacMorningSettingActivity"
+    tools:context="com.onedayone.piyagi.RepeatSettingActivity"
     android:background="#FFFFFF">
 
     <LinearLayout
@@ -73,7 +73,7 @@
             android:textStyle="bold"/>
 
         <LinearLayout
-            android:id="@+id/timepicker_hospital_morning"
+            android:id="@+id/timepicker_hospital"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -121,14 +121,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_hospital_hour_up"
+                    android:id="@+id/btn_hospital_year_up"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_hospital_hour"
+                    android:id="@+id/textview_hospital_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="01"
@@ -137,7 +137,7 @@
                     android:typeface="monospace"
                     android:layout_margin="3dp"/>
                 <ImageButton
-                    android:id="@+id/btn_hospital_hour_down"
+                    android:id="@+id/btn_hospital_year_down"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/down_arrow"
@@ -178,7 +178,7 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/timepicker_hospital_morning"
+            android:id="@+id/timepicker_hospital2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

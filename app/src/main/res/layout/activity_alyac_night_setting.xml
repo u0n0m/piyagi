@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_alyac_morning_setting"
+    android:id="@+id/activity_alyac_night_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.onedayone.piyagi.AlyacMorningSettingActivity"
+    tools:context="com.onedayone.piyagi.AlyacNightSettingActivity"
     android:background="#FFFFFF">
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,6 +63,7 @@
         android:layout_alignParentStart="true">
 
         <Button
+            android:id="@+id/alyac_night_save"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -93,7 +94,7 @@
             android:textStyle="bold"/>
 
         <LinearLayout
-            android:id="@+id/timepicker_alyac_morning"
+            android:id="@+id/timepicker_alyac_night"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -110,6 +111,7 @@
                 android:layout_weight="1">
 
                 <ImageButton
+                    android:id="@+id/btn_alyac_night_ampm_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
@@ -117,15 +119,17 @@
                     android:background="#00000000"/>
 
                 <TextView
+                    android:id="@+id/textview_alyac_night_ampm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="오후"
+                    android:text="오전"
                     android:textSize="37sp"
                     android:textColor="#2D2B2C"
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
 
                 <ImageButton
+                    android:id="@+id/btn_alyac_night_ampm_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -141,14 +145,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_up"
+                    android:id="@+id/btn_alyac_night_hour_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_hour"
+                    android:id="@+id/textview_alyac_night_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
@@ -157,7 +161,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_hour_down"
+                    android:id="@+id/btn_alyac_night_hour_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -181,14 +185,14 @@
                 android:gravity="center"
                 android:layout_weight="1">
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_up"
+                    android:id="@+id/btn_alyac_night_minute_up"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/up_arrow"
                     android:scaleType="fitCenter"
                     android:background="#00000000"/>
                 <TextView
-                    android:id="@+id/textview_alyac_minute"
+                    android:id="@+id/textview_alyac_night_minute"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30"
@@ -197,7 +201,7 @@
                     android:typeface="monospace"
                     android:layout_margin="8dp"/>
                 <ImageButton
-                    android:id="@+id/btn_alyac_minute_down"
+                    android:id="@+id/btn_alyac_night_minute_down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/down_arrow"
@@ -222,6 +226,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <Button
+                android:id="@+id/btn_alyac_night_alarm_sound1"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="40dp"
@@ -231,6 +236,7 @@
                 android:textSize="17dp"
                 android:typeface="monospace" />
             <Button
+                android:id="@+id/btn_alyac_night_alarm_sound2"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
@@ -256,7 +262,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <SeekBar
-                android:id="@+id/alyac_volume"
+                android:id="@+id/alyac_night_volume"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
