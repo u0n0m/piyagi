@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import static java.lang.Integer.parseInt;
 
 public class AlyacMorningSettingActivity extends AppCompatActivity {

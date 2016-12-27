@@ -226,6 +226,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <Button
+                android:id="@+id/btn_alyac_morning_alarm_sound1"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="40dp"
@@ -235,6 +236,7 @@
                 android:textSize="17dp"
                 android:typeface="monospace" />
             <Button
+                android:id="@+id/btn_alyac_morning_alarm_sound2"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
@@ -260,7 +262,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <SeekBar
-                android:id="@+id/alyac_volume"
+                android:id="@+id/alyac_morning_volume"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

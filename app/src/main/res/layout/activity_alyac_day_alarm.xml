@@ -32,12 +32,14 @@
             android:shadowRadius="1.5"
             android:layout_centerHorizontal="true"/>
         <ImageView
+            android:id="@+id/alyac_day_animation_imageview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/temp5"/>
+            android:layout_height="200dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center" />
     </LinearLayout>
     <ImageButton
+        android:id="@+id/alyac_day_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"

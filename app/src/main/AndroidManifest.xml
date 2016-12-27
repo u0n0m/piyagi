@@ -19,9 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"></activity>
+
         <activity
             android:name=".AlyacMorningSettingActivity"
             android:exported="true"></activity>
@@ -32,18 +34,30 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
         <activity
             android:name=".AlyacDaySettingActivity"
             android:exported="true"></activity>
         <activity
+            android:name=".AlyacDayAlarmActivity"
+            android:exported="true"></activity>
+        <service android:name=".AlyacDayService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
             android:name=".AlyacEveningSettingActivity"
             android:exported="true"></activity>
+
         <activity
             android:name=".AlyacNightSettingActivity"
             android:exported="true"></activity>
+
         <activity
             android:name=".HospitalSettingActivity"
             android:exported="true"></activity>
+
         <activity
             android:name=".RepeatSettingActivity"
             android:exported="true"></activity>
