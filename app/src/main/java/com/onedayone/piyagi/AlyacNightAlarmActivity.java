@@ -16,14 +16,14 @@ public class AlyacNightAlarmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alyac_morning_alarm);
+        setContentView(R.layout.activity_alyac_night_alarm);
 
-        ImageButton test = (ImageButton) findViewById(R.id.alyac_morning_alarm_btn);
+        ImageButton test = (ImageButton) findViewById(R.id.alyac_night_alarm_btn);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(intent);
                 System.gc();
                 finish();
             }
@@ -58,7 +58,7 @@ public class AlyacNightAlarmActivity extends AppCompatActivity {
             frameAnimation = (AnimationDrawable) view.getBackground();
             frameAnimation.start();
 
-/*            Handler hd = new Handler();
+/*          Handler hd = new Handler();
             hd.postDelayed(new Runnable() {
                 @Override
                 public void run() {

@@ -82,19 +82,20 @@ public class SplashActivity extends Activity{
                 @Override
                 public void run() {
                     frameAnimation.stop();
-//                    view.setBackgroundResource(R.drawable.splash_animation4);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
+                    System.gc();
+                    view.setBackgroundResource(R.drawable.splash_animation4);
+                    frameAnimation = (AnimationDrawable) view.getBackground();
+                    frameAnimation.start();
                 }
-            }, 8970);
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    view.setBackgroundResource(R.drawable.splash_animation5);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 6000);
+            }, 7800);
+            hd.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    frameAnimation.stop();
+                    System.gc();
+                    frameAnimation = null;
+                }
+            }, 9400);
 //            hd.postDelayed(new Runnable() {
 //                @Override
 //                public void run() {

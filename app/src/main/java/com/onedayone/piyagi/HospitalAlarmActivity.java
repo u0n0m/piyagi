@@ -1,25 +1,23 @@
 package com.onedayone.piyagi;
 
-import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class AlyacMorningAlarmActivity extends AppCompatActivity {
+public class HospitalAlarmActivity extends AppCompatActivity {
     private AnimationDrawable frameAnimation;
     private ImageView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alyac_morning_alarm);
+        setContentView(R.layout.activity_hospital_now_alarm);
 
-        ImageButton test = (ImageButton) findViewById(R.id.alyac_morning_alarm_btn);
+        ImageButton test = (ImageButton) findViewById(R.id.hospital_btn);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,12 +53,12 @@ public class AlyacMorningAlarmActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            view = (ImageView) findViewById(R.id.alyac_morning_animation_imageview);
-            view.setBackgroundResource(R.drawable.alyac_morning_animation_item1);
+            view = (ImageView) findViewById(R.id.hospital_animation_imageview);
+            view.setBackgroundResource(R.drawable.hospital_animation_item1);
             frameAnimation = (AnimationDrawable) view.getBackground();
             frameAnimation.start();
 
-            Handler hd = new Handler();
+/*            Handler hd = new Handler();
             hd.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -108,7 +106,7 @@ public class AlyacMorningAlarmActivity extends AppCompatActivity {
                     frameAnimation = (AnimationDrawable) view.getBackground();
                     frameAnimation.start();
                 }
-            }, 7900);
+            }, 7900);*/
         } else {
             frameAnimation.stop();
             System.gc();

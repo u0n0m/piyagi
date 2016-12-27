@@ -8,12 +8,12 @@
     tools:context="com.onedayone.piyagi.SplashActivity"    >
 
     <LinearLayout
-        android:id="@+id/splash_top"
+        android:id="@+id/hospital_alarm_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F1F1F1"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/alyac_morning_alarm_bottom1"
+        android:layout_above="@+id/hospital_alarm_bottom"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -46,12 +46,14 @@
             android:shadowRadius="1.5"
             android:layout_centerHorizontal="true"/>
         <ImageView
+            android:id="@+id/hospital_animation_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/temp2"/>
     </LinearLayout>
     <ImageButton
+        android:id="@+id/hospital_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
@@ -61,11 +63,11 @@
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:layout_centerInParent="true"
-        android:layout_above="@id/alyac_morning_alarm_bottom1"
+        android:layout_above="@id/hospital_alarm_bottom"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
-        android:id="@+id/alyac_morning_alarm_bottom1"
+        android:id="@+id/hospital_alarm_bottom"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#88D4C7"

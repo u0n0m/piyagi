@@ -238,7 +238,7 @@
             android:src="@drawable/piyagi_text" />
 
         <RelativeLayout
-            android:id="@+id/repeat_menu1"
+            android:id="@+id/main_repeat_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_background_text1"
@@ -258,7 +258,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace"/>
             <Button
-                android:id="@+id/repeat_button1"
+                android:id="@+id/repeat_btn"
                 android:layout_width="49dp"
                 android:layout_height="49dp"
                 android:layout_alignParentRight="true"
@@ -275,7 +275,7 @@
             android:layout_width="85dp"
             android:layout_height="60dp"
             android:padding="15dp"
-            android:layout_alignBottom="@id/repeat_menu1"
+            android:layout_alignBottom="@id/main_repeat_menu"
             android:layout_marginBottom="25dp"
             android:background="@drawable/round_btn1"
             android:src="@drawable/repeat_logo_black"/>
@@ -296,7 +296,7 @@
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />
         <RelativeLayout
-            android:id="@+id/hospital_menu1"
+            android:id="@+id/main_hospital_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -322,7 +322,7 @@
                     android:textStyle="bold"
                     android:typeface="monospace"/>
                 <TextView
-                    android:id="@+id/hospital_textview3"
+                    android:id="@+id/hospital_textview2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -333,7 +333,7 @@
                     android:typeface="monospace"/>
             </LinearLayout>
             <Button
-                android:id="@+id/hospital_button1"
+                android:id="@+id/hospital_btn"
                 android:layout_width="49dp"
                 android:layout_height="49dp"
                 android:layout_alignParentRight="true"
@@ -353,7 +353,7 @@
             android:padding="9dp"
             android:background="@drawable/round_btn1"
             android:src="@drawable/hospital_logo_black"
-            android:layout_alignBottom="@id/hospital_menu1"
+            android:layout_alignBottom="@id/main_hospital_menu"
             android:layout_marginBottom="35dp"/>
     </RelativeLayout>
 

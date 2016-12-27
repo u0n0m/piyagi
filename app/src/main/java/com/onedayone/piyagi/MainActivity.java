@@ -29,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String year_setting, month_setting, day_setting, ampm_setting, hour_setting, minute_setting, onoff_setting, description_setting;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //알약 아침 복용 메뉴 표시
         SharedPreferences pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE);
-        String ampm_setting = pref_alyac.getString("morning_ampm", "오전");
-        String hour_setting = pref_alyac.getString("morning_hour", "07");
-        String minute_setting = pref_alyac.getString("morning_minute", "30");
-        String onoff_setting = pref_alyac.getString("morning_onoff", "꺼짐");
+        ampm_setting = pref_alyac.getString("morning_ampm", "오전");
+        hour_setting = pref_alyac.getString("morning_hour", "07");
+        minute_setting = pref_alyac.getString("morning_minute", "30");
+        onoff_setting = pref_alyac.getString("morning_onoff", "꺼짐");
         //Toast.makeText(getApplicationContext(), "read2 morning_onoff)=" + morning_onoff_setting, Toast.LENGTH_LONG).show();
         // 설정 읽어서 복용 시간 표시
         String morning_settings = ampm_setting + " " + hour_setting + ":" + minute_setting;
@@ -87,6 +88,28 @@ public class MainActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.alyac_night_btn);
         btn.setText(onoff_setting);
 
+        //병원 예약 메뉴 표시
+        SharedPreferences pref_hospital = getApplicationContext().getSharedPreferences("HospitalSettings", Context.MODE_PRIVATE);
+        pref_hospital = getApplicationContext().getSharedPreferences("HospitalSettings", Context.MODE_PRIVATE);
+        year_setting = pref_hospital.getString("hospital_year", "오전");
+        month_setting = pref_hospital.getString("hospital_month", "07");
+        day_setting = pref_hospital.getString("hospital_dfay", "30");
+        ampm_setting = pref_hospital.getString("hospital_ampm", "오전");
+        hour_setting = pref_hospital.getString("hospital_hour", "07");
+        minute_setting = pref_hospital.getString("hospital_minute", "30");
+        onoff_setting = pref_hospital.getString("hospital_onoff", "꺼짐");
+        description_setting = pref_hospital.getString("hospital_description", "OO병원 OO과");
+        //Toast.makeText(getApplicationContext(), "read2 hospital_onoff)=" + hospital_onoff_setting, Toast.LENGTH_LONG).show();
+        String hospital_settings1 = year_setting + "/" + month_setting + "/" + day_setting + " " + ampm_setting + " " + hour_setting + ":" + minute_setting;
+        String hospital_settings2 = description_setting;
+        tv = (TextView) findViewById(R.id.hospital_textview1);
+        tv.setText(hospital_settings1);
+        tv = (TextView) findViewById(R.id.hospital_textview2);
+        tv.setText(hospital_settings2);
+        btn = (Button) findViewById(R.id.hospital_btn);
+        btn.setText(onoff_setting);
+
+        //////////////////////////////////////////////////////////////////////////////////
 
         // 아침약 복용 예약 설정 버튼 기능 구현
         RelativeLayout morning = (RelativeLayout) findViewById(R.id.main_alyac_morning_menu);
@@ -96,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
                 startActivity(intent);
                 System.gc();
-                //finish();
+                finish();
             }
         });
         Button morning_onoff = (Button) findViewById(R.id.alyac_morning_btn);
@@ -131,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AlyacDaySettingActivity.class);
                 startActivity(intent);
                 System.gc();
-                //finish();
+                finish();
             }
         });
         Button day_onoff = (Button) findViewById(R.id.alyac_day_btn);
@@ -166,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AlyacEveningSettingActivity.class);
                 startActivity(intent);
                 System.gc();
-                //finish();
+                finish();
             }
         });
         Button evening_onoff = (Button) findViewById(R.id.alyac_evening_btn);
@@ -201,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), AlyacNightSettingActivity.class);
                 startActivity(intent);
                 System.gc();
-                //finish();
+                finish();
             }
         });
         Button night_onoff = (Button) findViewById(R.id.alyac_night_btn);
@@ -227,7 +250,79 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // 병원 내원 예약 설정 버튼 기능 구현
+        RelativeLayout hospital = (RelativeLayout) findViewById(R.id.main_hospital_menu);
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), HospitalSettingActivity.class);
+                startActivity(intent);
+                System.gc();
+                finish();
+            }
+        });
+        Button hospital_onoff = (Button) findViewById(R.id.hospital_btn);
+        hospital_onoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button hospital_onoff = (Button) findViewById(R.id.hospital_btn);
+                SharedPreferences pref_hospital = getApplicationContext().getSharedPreferences("HospitalSettings", Context.MODE_PRIVATE);
+                String hospital_onoff_setting = pref_hospital.getString("hospital_onoff", "복약분 설정안됨");
+                if(hospital_onoff_setting.equals("켜짐") ) {
+                    hospital_onoff.setText("꺼짐");
+                    pref_hospital = getApplicationContext().getSharedPreferences("HospitalSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
+                    SharedPreferences.Editor editor = pref_hospital.edit(); //sharedPreference 내용 수정
+                    editor.putString("hospital_onoff","꺼짐"); //아침약 알람 설정 저장
+                    editor.commit(); // 설정 적용
+                }
+                if(hospital_onoff_setting.equals("꺼짐") ) {
+                    hospital_onoff.setText("켜짐");
+                    pref_hospital = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
+                    SharedPreferences.Editor editor = pref_hospital.edit(); //sharedPreference 내용 수정
+                    editor.putString("hospital_onoff","켜짐"); //아침약 알람 설정 저장
+                    editor.commit(); // 설정 적용
+                }
+            }
+        });
+
+        // 반복 복용 예약 설정 버튼 기능 구현
+        RelativeLayout repeat = (RelativeLayout) findViewById(R.id.main_repeat_menu);
+        repeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RepeatSettingActivity.class);
+                startActivity(intent);
+                System.gc();
+                finish();
+            }
+        });
+        Button repeat_onoff = (Button) findViewById(R.id.repeat_btn);
+        repeat_onoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button repeat_onoff = (Button) findViewById(R.id.repeat_btn);
+                SharedPreferences pref_repeat = getApplicationContext().getSharedPreferences("RepeatSettings", Context.MODE_PRIVATE);
+                String repeat_onoff_setting = pref_repeat.getString("repeat_onoff", "복약분 설정안됨");
+                if(repeat_onoff_setting.equals("켜짐") ) {
+                    repeat_onoff.setText("꺼짐");
+                    pref_repeat = getApplicationContext().getSharedPreferences("RepeatSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
+                    SharedPreferences.Editor editor = pref_repeat.edit(); //sharedPreference 내용 수정
+                    editor.putString("repeat_onoff","꺼짐"); //아침약 알람 설정 저장
+                    editor.commit(); // 설정 적용
+                }
+                if(repeat_onoff_setting.equals("꺼짐") ) {
+                    repeat_onoff.setText("켜짐");
+                    pref_repeat = getApplicationContext().getSharedPreferences("RepeatSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
+                    SharedPreferences.Editor editor = pref_repeat.edit(); //sharedPreference 내용 수정
+                    editor.putString("repeat_onoff","켜짐"); //아침약 알람 설정 저장
+                    editor.commit(); // 설정 적용
+                }
+            }
+        });
     }
+
+
 
     @Override
     public void onPause() {

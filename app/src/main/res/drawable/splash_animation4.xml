@@ -2,15 +2,14 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="false">
 
-    <item android:drawable="@drawable/a0031_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0032_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0033_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0034_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0035_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0036_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0037_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0038_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0039_360_203" android:duration="150"/>
-    <item android:drawable="@drawable/a0040_360_203" android:duration="150"/>
+    <item android:drawable="@drawable/a0061_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0062_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0063_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0064_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0065_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0066_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0067_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0068_360_203" android:duration="130"/>
+    <item android:drawable="@drawable/a0069_360_203" android:duration="130"/>
 
 </animation-list>

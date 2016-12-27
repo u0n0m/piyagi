@@ -71,6 +71,13 @@
         <activity
             android:name=".HospitalSettingActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".HospitalAlarmActivity"
+            android:exported="true"></activity>
+        <service android:name=".HospitalService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
 
         <activity
             android:name=".RepeatSettingActivity"

@@ -27,8 +27,7 @@ public class AlyacNightSettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_alyac_night_settings();
-                //startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                startActivity(new Intent(getApplicationContext(), AlyacNightAlarmActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 System.gc();
                 finish();
             }

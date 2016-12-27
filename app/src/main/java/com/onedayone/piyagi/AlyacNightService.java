@@ -38,7 +38,6 @@ public class AlyacNightService extends Service  {
             if(night_ampm_setting.equals("오후")){
                 night_hour_setting = night_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
             }
-
             //Integer hour = intent.getIntExtra("hour",0);
             //Integer minute = intent.getIntExtra("minute",0);
 
