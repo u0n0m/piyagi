@@ -20,6 +20,11 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
     Integer alyac_minute = 10;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alyac_morning_setting);
@@ -31,7 +36,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_alyac_morning_settings();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                //startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 System.gc();
                 finish();
             }
