@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AlyacMorningSettingActivity.class);
                 startActivity(intent);
-                System.gc();
+                //System.gc();
                 //finish();
             }
         });
@@ -381,21 +381,30 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onPause() {
-        super.onPause();
         System.gc();
+        super.onPause();
+        finish();
         //finish();
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         System.gc();
+        super.onStop();
+        finish();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         System.gc();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        System.gc();
+        super.onBackPressed();
+        finish();
     }
 
 }

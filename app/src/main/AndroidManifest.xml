@@ -2,16 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.onedayone.piyagi">
 
+    <supports-screens
+        android:largestWidthLimitDp="1200"
+        android:requiresSmallestWidthDp="900"
+        android:resizeable="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/piyagi_logo"
         android:label="삐약이"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
         <activity
             android:name=".SplashActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,74 +25,94 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
-
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AlyacMorningSettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AlyacMorningAlarmActivity"
-            android:exported="true"></activity>
-        <service android:name=".AlyacMorningService"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".AlyacMorningService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
         <activity
             android:name=".AlyacDaySettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AlyacDayAlarmActivity"
-            android:exported="true"></activity>
-        <service android:name=".AlyacDayService"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".AlyacDayService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
         <activity
             android:name=".AlyacEveningSettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AlyacEveningAlarmActivity"
-            android:exported="true"></activity>
-        <service android:name=".AlyacEveningService"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".AlyacEveningService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
         <activity
             android:name=".AlyacNightSettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AlyacNightAlarmActivity"
-            android:exported="true"></activity>
-        <service android:name=".AlyacNightService"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".AlyacNightService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
         <activity
             android:name=".HospitalSettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HospitalAlarmActivity"
-            android:exported="true"></activity>
-        <service android:name=".HospitalService"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".HospitalService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
         <activity
             android:name=".RepeatSettingActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RepeatAlarmActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".RepeatService"
+            android:enabled="true"
+            android:exported="true" />
 
     </application>
-    <supports-screens
-        android:resizeable="true"
-        android:requiresSmallestWidthDp="900"
-        android:largestWidthLimitDp="1200"
-        android:xlargeScreens="true"></supports-screens>
+
 </manifest>
