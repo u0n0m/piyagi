@@ -31,6 +31,7 @@
             android:shadowRadius="1.5"
             android:layout_centerHorizontal="true"/>
         <ImageView
+            android:id="@+id/alyac_evening_animation_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
@@ -59,7 +60,7 @@
         <ImageView
             android:id="@+id/splash_text2"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:src="@drawable/piyagi_text"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />

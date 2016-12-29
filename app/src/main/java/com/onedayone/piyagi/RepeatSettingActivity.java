@@ -119,7 +119,7 @@ public class RepeatSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(repeat_minute));
                 }
                 else{
-                    repeat_minute += 1;
+                    repeat_minute += 10;
                     tv.setText(String.valueOf(repeat_minute));
                 }
 
@@ -137,11 +137,11 @@ public class RepeatSettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(repeat_minute));
                 }
                 else if(repeat_minute == 10){
-                    repeat_minute -= 1;
+                    repeat_minute -= 10;
                     tv.setText(String.valueOf("0" + repeat_minute));
                 }
                 else{
-                    repeat_minute -= 1;
+                    repeat_minute -= 10;
                     tv.setText(String.valueOf(repeat_minute));
                 }
 

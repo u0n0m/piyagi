@@ -215,7 +215,11 @@
                 android:textSize="15dp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                android:typeface="monospace"/>
+                android:typeface="monospace"
+                android:shadowColor="#FF464646"
+                android:shadowDx="1.0"
+                android:shadowDy="1.0"
+                android:shadowRadius="1.0"/>
         </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout
@@ -319,7 +323,7 @@
                     android:layout_gravity="center"
                     android:text="2017/01/15 오전11:00"
                     android:textColor="#242E2B"
-                    android:textSize="17dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     android:typeface="monospace"/>
 

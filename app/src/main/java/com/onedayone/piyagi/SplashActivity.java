@@ -41,32 +41,28 @@ public class SplashActivity extends Activity{
             R.drawable.tittle_0067, R.drawable.tittle_0068, R.drawable.tittle_0069
     };
 
-    private static final int ANIMATION_INTERVAL = 150;  // 100ms
+    private static final int ANIMATION_INTERVAL = 130;  // 100ms
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
 
-        ImageView imageView = (ImageView) findViewById(R.id.splash_animation_imageview);
-        mFasterAnimationsContainer = FasterAnimationsContainer
-                .getInstance(imageView);
-        mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES,
-                ANIMATION_INTERVAL);
-        mFasterAnimationsContainer.start();
-
         Handler hd = new Handler();
         hd.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                //mFasterAnimationsContainer = null;
+                System.gc();
                 finish();       // ?? 초후 닫아버림
             }
-        }, 10500);
+        }, 10000);
     }
 
     @Override
     public void onPause() {
+        mFasterAnimationsContainer.stop();
         System.gc();
         super.onPause();
         finish();
@@ -74,126 +70,34 @@ public class SplashActivity extends Activity{
 
     @Override
     protected void onStop() {
+        mFasterAnimationsContainer.stop();
         System.gc();
         super.onStop();
+        finish();
     }
 
     @Override
     protected void onDestroy() {
+        mFasterAnimationsContainer.stop();
         System.gc();
         super.onDestroy();
-        mFasterAnimationsContainer.stop();
+        finish();
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus){
-        AnimationDrawable frameAnimation1, frameAnimation2, frameAnimation3, frameAnimation4;
-        ImageView view1, view2, view3, view4;
+
         super.onWindowFocusChanged(hasFocus);
         if(hasFocus){
-//            view1 = (ImageView) findViewById(R.id.splash_animation_imageview);
-//            view1.setBackgroundResource(R.drawable.splash_animation1);
-//            frameAnimation1 = (AnimationDrawable) view1.getBackground();
-//            frameAnimation1.start();
-//            while(frameAnimation1.isRunning() ){
-//
-//            }
-//
-//            //frameAnimation1.stop();
-//            frameAnimation1 = null;
-//            view1.setBackground(null);
-//            view1 = null;
-//            System.gc();
+            ImageView imageView = (ImageView) findViewById(R.id.splash_animation_imageview);
+            mFasterAnimationsContainer = FasterAnimationsContainer
+                    .getInstance(imageView);
+            mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES,
+                    ANIMATION_INTERVAL);
+            mFasterAnimationsContainer.start();
 
-//            view2 = (ImageView) findViewById(R.id.splash_animation_imageview);
-//            view2.setBackgroundResource(R.drawable.splash_animation2);
-//            frameAnimation2 = (AnimationDrawable) view2.getBackground();
-//            frameAnimation2.start();
-//            //frameAnimation2.stop();
-//            frameAnimation2 = null;
-//            view2.setBackground(null);
-//            view2 = null;
-//            System.gc();
-
-//            view3 = (ImageView) findViewById(R.id.splash_animation_imageview);
-//            view3.setBackgroundResource(R.drawable.splash_animation3);
-//            frameAnimation3 = (AnimationDrawable) view3.getBackground();
-//            frameAnimation3.start();
-//            //frameAnimation3.stop();
-//            frameAnimation3 = null;
-//            view3.setBackground(null);
-//            view3 = null;
-//            System.gc();
-//
-//            view4 = (ImageView) findViewById(R.id.splash_animation_imageview);
-//            view4.setBackgroundResource(R.drawable.splash_animation4);
-//            frameAnimation4 = (AnimationDrawable) view4.getBackground();
-//            frameAnimation4.start();
-//            //frameAnimation4.stop();
-//            frameAnimation4 = null;
-//            view4.setBackground(null);
-//            view4 = null;
-//            System.gc();
-
-//            Handler hd = new Handler();
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    frameAnimation.stop();
-//                    System.gc();
-//                    view.setBackgroundResource(R.drawable.splash_animation2);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 2600);
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    frameAnimation.stop();
-//                    System.gc();
-//                    view.setBackgroundResource(R.drawable.splash_animation3);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 5200);
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    frameAnimation.stop();
-//                    System.gc();
-//                    view.setBackgroundResource(R.drawable.splash_animation4);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 7600);
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    frameAnimation.stop();
-//                    System.gc();
-//                    frameAnimation = null;
-//                }
-//            }, 9400);
-
-
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    view.setBackgroundResource(R.drawable.splash_animation6);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 7500);
-//            hd.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    view.setBackgroundResource(R.drawable.splash_animation7);
-//                    frameAnimation = (AnimationDrawable) view.getBackground();
-//                    frameAnimation.start();
-//                }
-//            }, 9000);
         } else {
-//            frameAnimation4.stop();
+            mFasterAnimationsContainer.stop();
             System.gc();
             finish();
         }

@@ -31,7 +31,7 @@ public class AlyacDayService extends Service  {
         String day_hour_setting = pref_alyac.getString("day_hour", "복약시 설정안됨");
         String day_minute_setting = pref_alyac.getString("day_minute", "복약분 설정안됨");
         String day_onoff_setting = pref_alyac.getString("day_onoff", "설정상태 설정안됨");
-        Toast.makeText(this, "서비스시작:"+day_ampm_setting+":"+day_hour_setting+":"+day_minute_setting, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "서비스시작:"+day_ampm_setting+":"+day_hour_setting+":"+day_minute_setting, Toast.LENGTH_LONG).show();
 
         if(day_onoff_setting.equals("켜짐")){
 

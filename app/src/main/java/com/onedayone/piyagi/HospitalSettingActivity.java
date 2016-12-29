@@ -35,7 +35,7 @@ public class HospitalSettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_hospital_settings();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), HospitalAlarmActivity.class));
                 System.gc();
                 finish();
             }
@@ -222,7 +222,7 @@ public class HospitalSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(hospital_minute));
                 }
                 else{
-                    hospital_minute += 1;
+                    hospital_minute += 10;
                     tv.setText(String.valueOf(hospital_minute));
                 }
 
@@ -240,11 +240,11 @@ public class HospitalSettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(hospital_minute));
                 }
                 else if(hospital_minute == 10){
-                    hospital_minute -= 1;
+                    hospital_minute -= 10;
                     tv.setText(String.valueOf("0" + hospital_minute));
                 }
                 else{
-                    hospital_minute -= 1;
+                    hospital_minute -= 10;
                     tv.setText(String.valueOf(hospital_minute));
                 }
 

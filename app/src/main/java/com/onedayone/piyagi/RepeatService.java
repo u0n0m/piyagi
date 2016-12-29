@@ -37,7 +37,7 @@ public class RepeatService extends Service  {
 
             if(morning_ampm_setting.equals("오후")){
                 morning_hour_setting = morning_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
-                Toast.makeText(this, "서비스시작:"+morning_ampm_setting+":"+morning_hour_setting+":"+morning_minute_setting, Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "서비스시작:"+morning_ampm_setting+":"+morning_hour_setting+":"+morning_minute_setting, Toast.LENGTH_LONG).show();
             }
 
             //Integer hour = intent.getIntExtra("hour",0);

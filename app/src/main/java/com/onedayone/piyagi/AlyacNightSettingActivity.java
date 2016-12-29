@@ -122,7 +122,7 @@ public class AlyacNightSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(alyac_minute));
                 }
                 else{
-                    alyac_minute += 1;
+                    alyac_minute += 10;
                     tv.setText(String.valueOf(alyac_minute));
                 }
 
@@ -140,11 +140,11 @@ public class AlyacNightSettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(alyac_minute));
                 }
                 else if(alyac_minute == 10){
-                    alyac_minute -= 1;
+                    alyac_minute -= 10;
                     tv.setText(String.valueOf("0" + alyac_minute));
                 }
                 else{
-                    alyac_minute -= 1;
+                    alyac_minute -= 10;
                     tv.setText(String.valueOf(alyac_minute));
                 }
 

@@ -31,7 +31,7 @@ public class AlyacNightService extends Service  {
         String night_hour_setting = pref_alyac.getString("night_hour", "복약시 설정안됨");
         String night_minute_setting = pref_alyac.getString("night_minute", "복약분 설정안됨");
         String night_onoff_setting = pref_alyac.getString("night_onoff", "설정상태 설정안됨");
-        Toast.makeText(this, "서비스시작:"+night_ampm_setting+":"+night_hour_setting+":"+night_minute_setting, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "서비스시작:"+night_ampm_setting+":"+night_hour_setting+":"+night_minute_setting, Toast.LENGTH_LONG).show();
 
         if(night_onoff_setting.equals("켜짐")){
 

@@ -23,7 +23,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
     public void onPause() {
         super.onPause();
         System.gc();
-        finish();
+        //finish();
     }
     @Override
     protected void onStop() {
@@ -38,7 +38,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        //finish();
     }
 
     @Override
@@ -51,9 +51,10 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(getApplicationContext(), AlyacMorningAlarmActivity.class));
                 save_alyac_morning_settings();
-                //startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                //onBackPressed();
                 System.gc();
                 finish();
             }
@@ -162,10 +163,10 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView tv = (TextView) findViewById(R.id.textview_alyac_morning_minute);
                 if(alyac_minute <= 0 ) {
-                    alyac_minute = 50;
+                    alyac_minute = 59;
                     tv.setText(String.valueOf(alyac_minute));
                 }
-                else if(alyac_minute == 10){
+                else if(alyac_minute == 1){
                     alyac_minute -= 1;
                     tv.setText(String.valueOf("0" + alyac_minute));
                 }
@@ -179,6 +180,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
     }
 
     public boolean save_alyac_morning_settings(){ // 저장버튼 누르면 실행되는 내용
+        Toast.makeText(getApplicationContext(),"save alyac morning settings",Toast.LENGTH_LONG).show();
         TextView textview_alyac_morning_ampm = (TextView) findViewById(R.id.textview_alyac_morning_ampm);  //알람 오전/오후 읽어오기
         TextView textview_alyac_morning_hour = (TextView) findViewById(R.id.textview_alyac_morning_hour);  //알람 시간 읽어오기
         TextView textview_alyac_morning_minute = (TextView) findViewById(R.id.textview_alyac_morning_minute); // 알람 분 읽어오기

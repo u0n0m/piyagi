@@ -31,7 +31,7 @@ public class AlyacDaySettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_alyac_day_settings();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), AlyacDayAlarmActivity.class));
                 System.gc();
                 finish();
             }
@@ -126,7 +126,7 @@ public class AlyacDaySettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(alyac_minute));
                 }
                 else{
-                    alyac_minute += 1;
+                    alyac_minute += 10;
                     tv.setText(String.valueOf(alyac_minute));
                 }
 
@@ -144,11 +144,11 @@ public class AlyacDaySettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(alyac_minute));
                 }
                 else if(alyac_minute == 10){
-                    alyac_minute -= 1;
+                    alyac_minute -= 10;
                     tv.setText(String.valueOf("0" + alyac_minute));
                 }
                 else{
-                    alyac_minute -= 1;
+                    alyac_minute -= 10;
                     tv.setText(String.valueOf(alyac_minute));
                 }
 
