@@ -49,6 +49,10 @@
             android:id="@+id/alyac_night_animation_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="90dp"
+            android:src="@drawable/night_alarm_0001"
+            android:adjustViewBounds="true"
             android:layout_gravity="center" />
     </LinearLayout>
     <ImageButton

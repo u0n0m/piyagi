@@ -20,6 +20,28 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
     Integer alyac_minute = 10;
 
     @Override
+    public void onPause() {
+        super.onPause();
+        System.gc();
+        //finish();
+    }
+    @Override
+    protected void onStop() {
+        System.gc();
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy() {
+        System.gc();
+        super.onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alyac_evening_setting);
@@ -29,9 +51,8 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_alyac_evening_settings();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 System.gc();
                 finish();
             }
@@ -126,10 +147,9 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(alyac_minute));
                 }
                 else{
-                    alyac_minute += 10;
+                    alyac_minute += 1;
                     tv.setText(String.valueOf(alyac_minute));
                 }
-
             }
         });
 
@@ -140,15 +160,15 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView tv = (TextView) findViewById(R.id.textview_alyac_evening_minute);
                 if(alyac_minute <= 0 ) {
-                    alyac_minute = 50;
+                    alyac_minute = 59;
                     tv.setText(String.valueOf(alyac_minute));
                 }
-                else if(alyac_minute == 10){
-                    alyac_minute -= 10;
+                else if(alyac_minute == 1){
+                    alyac_minute -= 1;
                     tv.setText(String.valueOf("0" + alyac_minute));
                 }
                 else{
-                    alyac_minute -= 10;
+                    alyac_minute -= 1;
                     tv.setText(String.valueOf(alyac_minute));
                 }
 
@@ -156,36 +176,16 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        System.gc();
-        finish();
-    }
-    @Override
-    protected void onStop() {
-        System.gc();
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        System.gc();
-        super.onDestroy();
-    }
-
     public boolean save_alyac_evening_settings(){ // 저장버튼 누르면 실행되는 내용
+        //Toast.makeText(getApplicationContext(),"save alyac evening settings",Toast.LENGTH_LONG).show();
         TextView textview_alyac_evening_ampm = (TextView) findViewById(R.id.textview_alyac_evening_ampm);  //알람 오전/오후 읽어오기
         TextView textview_alyac_evening_hour = (TextView) findViewById(R.id.textview_alyac_evening_hour);  //알람 시간 읽어오기
         TextView textview_alyac_evening_minute = (TextView) findViewById(R.id.textview_alyac_evening_minute); // 알람 분 읽어오기
-        //Toast.makeText(getApplicationContext(),"save_alyac_settings!",Toast.LENGTH_SHORT).show();
 
         String ampm = textview_alyac_evening_ampm.getText().toString();
         String hour = textview_alyac_evening_hour.getText().toString();
         String minute = textview_alyac_evening_minute.getText().toString();
         String onoff = "켜짐"; //설정 상태
-        //String alyac_evening_settings = ampm + ":" + hour + ":" + minute + ":" + onoff ; //오전/오후, 알람시간, 알람분, 설정 상태(on/off)
-        //Toast.makeText(getApplicationContext(), "read variable alyac_evening_settings =" + alyac_evening_settings, Toast.LENGTH_LONG).show();
 
         SharedPreferences pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE); // 설정 정보 읽어오기
         SharedPreferences.Editor editor = pref_alyac.edit(); //sharedPreference 내용 수정
@@ -194,17 +194,8 @@ public class AlyacEveningSettingActivity extends AppCompatActivity {
         editor.putString("evening_minute",minute); //아침약 알람 설정 저장
         editor.putString("evening_onoff",onoff); //아침약 알람 설정 저장
         editor.commit(); // 설정 적용
-/*
-        pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE);
-        String evening_ampm = pref_alyac.getString("evening_ampm", "오전/오후 설정안됨");
-        Toast.makeText(getApplicationContext(), "read1 evening_ampm)=" + evening_ampm, Toast.LENGTH_LONG).show();
-*/
+
         Intent intent = new Intent(this, AlyacEveningService.class);
-//        if(ampm.equals("오후")){
-//            hour = hour  + 12; // 알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
-//        }
-//        intent.putExtra("hour", parseInt(hour));
-//        intent.putExtra("minute", parseInt(minute));
         startService(intent);
 
         return true;

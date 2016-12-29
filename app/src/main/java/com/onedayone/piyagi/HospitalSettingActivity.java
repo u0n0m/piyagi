@@ -24,6 +24,29 @@ public class HospitalSettingActivity extends AppCompatActivity {
     Integer hospital_minute = 10;
 
     @Override
+    public void onPause() {
+        super.onPause();
+        System.gc();
+        finish();
+    }
+    @Override
+    protected void onStop() {
+        System.gc();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        System.gc();
+        super.onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital_setting);
@@ -33,9 +56,7 @@ public class HospitalSettingActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
                 save_hospital_settings();
-                startActivity(new Intent(getApplicationContext(), HospitalAlarmActivity.class));
                 System.gc();
                 finish();
             }
@@ -132,10 +153,6 @@ public class HospitalSettingActivity extends AppCompatActivity {
             }
         });
 
-
-        //////////////////////////////////////////////////////////////////////////////////
-
-
         //오전/오후 변경 위쪽 버튼
         ImageButton btn_hospital_ampm_up = (ImageButton) findViewById(R.id.btn_hospital_ampm_up);
         btn_hospital_ampm_up.setOnClickListener(new View.OnClickListener() {
@@ -222,7 +239,7 @@ public class HospitalSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(hospital_minute));
                 }
                 else{
-                    hospital_minute += 10;
+                    hospital_minute += 1;
                     tv.setText(String.valueOf(hospital_minute));
                 }
 
@@ -240,34 +257,16 @@ public class HospitalSettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(hospital_minute));
                 }
                 else if(hospital_minute == 10){
-                    hospital_minute -= 10;
+                    hospital_minute -= 1;
                     tv.setText(String.valueOf("0" + hospital_minute));
                 }
                 else{
-                    hospital_minute -= 10;
+                    hospital_minute -= 1;
                     tv.setText(String.valueOf(hospital_minute));
                 }
 
             }
         });
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        System.gc();
-        finish();
-    }
-    @Override
-    protected void onStop() {
-        System.gc();
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        System.gc();
-        super.onDestroy();
     }
 
     public boolean save_hospital_settings(){ // 저장버튼 누르면 실행되는 내용
@@ -299,7 +298,7 @@ public class HospitalSettingActivity extends AppCompatActivity {
         editor.putString("hospital_onoff",onoff); //켜짐/꺼짐 설정 저장
         editor.putString("hospital_description",description); //켜짐/꺼짐 설정 저장
         editor.commit(); // 설정 적용
-
+        Toast.makeText(this, "병원내원설정", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, HospitalService.class);
         startService(intent);
 

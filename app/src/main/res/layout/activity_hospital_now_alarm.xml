@@ -53,7 +53,7 @@
             android:src="@drawable/temp2"/>
     </LinearLayout>
     <ImageButton
-        android:id="@+id/hospital_btn"
+        android:id="@+id/hospital_now_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"

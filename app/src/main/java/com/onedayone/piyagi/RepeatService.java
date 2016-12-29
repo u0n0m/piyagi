@@ -22,38 +22,31 @@ public class RepeatService extends Service  {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "반복서비스시작:", Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-        Intent Intent = new Intent(getApplicationContext(), AlyacMorningAlarmActivity.class);
+        Intent Intent = new Intent(getApplicationContext(), RepeatAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
 
-        SharedPreferences pref_alyac = getApplicationContext().getSharedPreferences("AlyacSettings", Context.MODE_PRIVATE);
-        String morning_ampm_setting = pref_alyac.getString("morning_ampm", "오전오후 설정안됨");
-        String morning_hour_setting = pref_alyac.getString("morning_hour", "복약시 설정안됨");
-        String morning_minute_setting = pref_alyac.getString("morning_minute", "복약분 설정안됨");
-        String morning_onoff_setting = pref_alyac.getString("morning_onoff", "설정상태 설정안됨");
+        SharedPreferences pref_alyac = getApplicationContext().getSharedPreferences("RepeatSettings", Context.MODE_PRIVATE);
+        String repeat_ampm_setting = pref_alyac.getString("repeat_ampm", "오전오후 설정안됨");
+        String repeat_hour_setting = pref_alyac.getString("repeat_hour", "복약시 설정안됨");
+        String repeat_minute_setting = pref_alyac.getString("repeat_minute", "복약분 설정안됨");
+        String repeat_onoff_setting = pref_alyac.getString("repeat_onoff", "설정상태 설정안됨");
+        String repeat_period_setting = pref_alyac.getString("repeat_onoff", "설정상태 설정안됨");
 
+        if(repeat_onoff_setting.equals("켜짐")){
 
-        if(morning_onoff_setting.equals("켜짐")){
-
-            if(morning_ampm_setting.equals("오후")){
-                morning_hour_setting = morning_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
-                //Toast.makeText(this, "서비스시작:"+morning_ampm_setting+":"+morning_hour_setting+":"+morning_minute_setting, Toast.LENGTH_LONG).show();
+            if(repeat_ampm_setting.equals("오후")){
+                Integer temp = Integer.parseInt(repeat_hour_setting) + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                repeat_hour_setting = temp.toString();
             }
-
-            //Integer hour = intent.getIntExtra("hour",0);
-            //Integer minute = intent.getIntExtra("minute",0);
-
             Calendar calendar = Calendar.getInstance();
-            //calendar.set(Calendar.YEAR, 2016);
-            //calendar.set(Calendar.MONTH, Calendar.SEPTEMBER);
-            //calendar.set(Calendar.DATE, 1);
-            calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(morning_hour_setting));
-            calendar.set(Calendar.MINUTE, Integer.parseInt(morning_minute_setting));
+            calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(repeat_hour_setting));
+            calendar.set(Calendar.MINUTE, Integer.parseInt(repeat_minute_setting));
             calendar.set(Calendar.SECOND, 0);
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pIntent);
-
         }
-        else if(morning_onoff_setting.equals("꺼짐")){ //나중에 구현하자
+        else if(repeat_onoff_setting.equals("꺼짐")){ //나중에 구현하자
 /*
             AlarmManager mAlarmMgr = null;
             PendingIntent mAlarmIntent = null;
@@ -66,7 +59,7 @@ public class RepeatService extends Service  {
                 mAlarmMgr = null;
                 mAlarmIntent = null;
 */
-/*                Intent intentlocal = new Intent(this,AlyacMorningService.class);
+/*                Intent intentlocal = new Intent(this,AlyacRepeatService.class);
                 PendingIntent pilocal = PendingIntent.getBroadcast(SampledateActivity.this,
                         0, intentlocal, 0);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);

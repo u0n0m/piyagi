@@ -9,38 +9,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class RepeatAlarmActivity extends AppCompatActivity {
     FasterAnimationsContainer mFasterAnimationsContainer;
-    private static final int[] IMAGE_RESOURCES = { R.drawable.inter_0000,
-            R.drawable.inter_0001, R.drawable.inter_0002, R.drawable.inter_0003,
-            R.drawable.inter_0004, R.drawable.inter_0005, R.drawable.inter_0006,
-            R.drawable.inter_0007, R.drawable.inter_0008, R.drawable.inter_0009,
-            R.drawable.inter_0010, R.drawable.inter_0011, R.drawable.inter_0012,
-            R.drawable.inter_0013, R.drawable.inter_0014, R.drawable.inter_0015,
-            R.drawable.inter_0016, R.drawable.inter_0017, R.drawable.inter_0018,
-            R.drawable.inter_0019, R.drawable.inter_0020, R.drawable.inter_0021,
-            R.drawable.inter_0022, R.drawable.inter_0023, R.drawable.inter_0024,
-            R.drawable.inter_0025, R.drawable.inter_0026, R.drawable.inter_0027,
-            R.drawable.inter_0028, R.drawable.inter_0029, R.drawable.inter_0030,
-            R.drawable.inter_0031, R.drawable.inter_0032, R.drawable.inter_0033,
-            R.drawable.inter_0034, R.drawable.inter_0035, R.drawable.inter_0036,
-            R.drawable.inter_0037, R.drawable.inter_0038, R.drawable.inter_0039,
-            R.drawable.inter_0040, R.drawable.inter_0041, R.drawable.inter_0042,
-            R.drawable.inter_0043, R.drawable.inter_0044, R.drawable.inter_0045,
-            R.drawable.inter_0046, R.drawable.inter_0047, R.drawable.inter_0048,
-            R.drawable.inter_0049, R.drawable.inter_0050, R.drawable.inter_0051,
-            R.drawable.inter_0052, R.drawable.inter_0053, R.drawable.inter_0054,
-            R.drawable.inter_0055, R.drawable.inter_0056, R.drawable.inter_0057,
-            R.drawable.inter_0058, R.drawable.inter_0059, R.drawable.inter_0060,
-            R.drawable.inter_0061, R.drawable.inter_0062, R.drawable.inter_0063,
-            R.drawable.inter_0064, R.drawable.inter_0065, R.drawable.inter_0066,
-            R.drawable.inter_0067, R.drawable.inter_0068, R.drawable.inter_0069,
-            R.drawable.inter_0070, R.drawable.inter_0071, R.drawable.inter_0072,
-            R.drawable.inter_0073, R.drawable.inter_0074, R.drawable.inter_0075,
-            R.drawable.inter_0076, R.drawable.inter_0077, R.drawable.inter_0078,
-            R.drawable.inter_0079, R.drawable.inter_0080, R.drawable.inter_0081,
-            R.drawable.inter_0082, R.drawable.inter_0083, R.drawable.inter_0084
+    private static final int[] IMAGE_RESOURCES = {
+            R.drawable.repeat_alarm_0001, R.drawable.repeat_alarm_0002, R.drawable.repeat_alarm_0003,
+            R.drawable.repeat_alarm_0004, R.drawable.repeat_alarm_0005, R.drawable.repeat_alarm_0006,
+            R.drawable.repeat_alarm_0007, R.drawable.repeat_alarm_0008, R.drawable.repeat_alarm_0009,
+            R.drawable.repeat_alarm_0010, R.drawable.repeat_alarm_0011, R.drawable.repeat_alarm_0012,
+            R.drawable.repeat_alarm_0013, R.drawable.repeat_alarm_0014, R.drawable.repeat_alarm_0015,
+            R.drawable.repeat_alarm_0016, R.drawable.repeat_alarm_0017, R.drawable.repeat_alarm_0018,
+            R.drawable.repeat_alarm_0019, R.drawable.repeat_alarm_0020, R.drawable.repeat_alarm_0021,
+            R.drawable.repeat_alarm_0022, R.drawable.repeat_alarm_0023, R.drawable.repeat_alarm_0024,
+            R.drawable.repeat_alarm_0025, R.drawable.repeat_alarm_0026, R.drawable.repeat_alarm_0027,
+            R.drawable.repeat_alarm_0028, R.drawable.repeat_alarm_0029, R.drawable.repeat_alarm_0030,
+            R.drawable.repeat_alarm_0031, R.drawable.repeat_alarm_0032, R.drawable.repeat_alarm_0033,
+            R.drawable.repeat_alarm_0034, R.drawable.repeat_alarm_0035, R.drawable.repeat_alarm_0036,
+            R.drawable.repeat_alarm_0037, R.drawable.repeat_alarm_0038, R.drawable.repeat_alarm_0039,
+            R.drawable.repeat_alarm_0040, R.drawable.repeat_alarm_0041, R.drawable.repeat_alarm_0042,
+            R.drawable.repeat_alarm_0043, R.drawable.repeat_alarm_0044, R.drawable.repeat_alarm_0045,
+            R.drawable.repeat_alarm_0046, R.drawable.repeat_alarm_0047, R.drawable.repeat_alarm_0048,
+            R.drawable.repeat_alarm_0049, R.drawable.repeat_alarm_0050, R.drawable.repeat_alarm_0051,
+            R.drawable.repeat_alarm_0052, R.drawable.repeat_alarm_0053, R.drawable.repeat_alarm_0054,
+            R.drawable.repeat_alarm_0055, R.drawable.repeat_alarm_0056, R.drawable.repeat_alarm_0057,
+            R.drawable.repeat_alarm_0058, R.drawable.repeat_alarm_0059, R.drawable.repeat_alarm_0060,
+            R.drawable.repeat_alarm_0061, R.drawable.repeat_alarm_0062, R.drawable.repeat_alarm_0063,
+            R.drawable.repeat_alarm_0064, R.drawable.repeat_alarm_0065, R.drawable.repeat_alarm_0066,
+            R.drawable.repeat_alarm_0067, R.drawable.repeat_alarm_0068, R.drawable.repeat_alarm_0069,
+            R.drawable.repeat_alarm_0070, R.drawable.repeat_alarm_0071, R.drawable.repeat_alarm_0072,
+            R.drawable.repeat_alarm_0073, R.drawable.repeat_alarm_0074, R.drawable.repeat_alarm_0075,
+            R.drawable.repeat_alarm_0076, R.drawable.repeat_alarm_0077, R.drawable.repeat_alarm_0078,
+            R.drawable.repeat_alarm_0079, R.drawable.repeat_alarm_0080, R.drawable.repeat_alarm_0081,
+            R.drawable.repeat_alarm_0082, R.drawable.repeat_alarm_0083, R.drawable.repeat_alarm_0084
     };
 
     private static final int ANIMATION_INTERVAL = 130;  // 100ms
@@ -50,14 +51,15 @@ public class RepeatAlarmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repeat_alarm);
 
-        Handler hd = new Handler();
-        hd.postDelayed(new Runnable() {
+        ImageButton btn_save = (ImageButton) findViewById(R.id.repeat_alarm_btn);
+        btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
+            public void onClick(View view) {
                 mFasterAnimationsContainer.stop();
-                finish();       // ?? 초후 닫아버림
+                System.gc();
+                finish();
             }
-        }, 10500);
+        });
     }
 
     @Override
@@ -92,9 +94,9 @@ public class RepeatAlarmActivity extends AppCompatActivity {
             ImageView imageView = (ImageView) findViewById(R.id.repeat_animation_imageview);
             mFasterAnimationsContainer = FasterAnimationsContainer
                     .getInstance(imageView);
-            mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES,
-                    ANIMATION_INTERVAL);
+            mFasterAnimationsContainer.addAllFrames(IMAGE_RESOURCES, ANIMATION_INTERVAL);
             mFasterAnimationsContainer.start();
+            Toast.makeText(this, "alarm:", Toast.LENGTH_LONG).show();
 
         } else {
             mFasterAnimationsContainer.stop();

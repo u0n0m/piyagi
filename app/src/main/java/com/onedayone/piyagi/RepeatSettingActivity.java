@@ -17,6 +17,28 @@ public class RepeatSettingActivity extends AppCompatActivity {
     Integer repeat_period = 4;
 
     @Override
+    public void onPause() {
+        super.onPause();
+        System.gc();
+        //finish();
+    }
+    @Override
+    protected void onStop() {
+        System.gc();
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy() {
+        System.gc();
+        super.onDestroy();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repeat_setting);
@@ -27,7 +49,6 @@ public class RepeatSettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 save_repeat_settings();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 System.gc();
                 finish();
             }
@@ -119,7 +140,7 @@ public class RepeatSettingActivity extends AppCompatActivity {
                     tv.setText("0" + String.valueOf(repeat_minute));
                 }
                 else{
-                    repeat_minute += 10;
+                    repeat_minute += 1;
                     tv.setText(String.valueOf(repeat_minute));
                 }
 
@@ -137,11 +158,11 @@ public class RepeatSettingActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(repeat_minute));
                 }
                 else if(repeat_minute == 10){
-                    repeat_minute -= 10;
+                    repeat_minute -= 1;
                     tv.setText(String.valueOf("0" + repeat_minute));
                 }
                 else{
-                    repeat_minute -= 10;
+                    repeat_minute -= 1;
                     tv.setText(String.valueOf(repeat_minute));
                 }
 
@@ -190,24 +211,6 @@ public class RepeatSettingActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        System.gc();
-        finish();
-    }
-    @Override
-    protected void onStop() {
-        System.gc();
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        System.gc();
-        super.onDestroy();
     }
 
     public boolean save_repeat_settings(){ // 저장버튼 누르면 실행되는 내용

@@ -22,6 +22,8 @@ public class AlyacEveningService extends Service  {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "서비스시작:", Toast.LENGTH_LONG).show();
+
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         Intent Intent = new Intent(getApplicationContext(), AlyacEveningAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
@@ -31,26 +33,18 @@ public class AlyacEveningService extends Service  {
         String evening_hour_setting = pref_alyac.getString("evening_hour", "복약시 설정안됨");
         String evening_minute_setting = pref_alyac.getString("evening_minute", "복약분 설정안됨");
         String evening_onoff_setting = pref_alyac.getString("evening_onoff", "설정상태 설정안됨");
-        //Toast.makeText(this, "서비스시작:"+evening_ampm_setting+":"+evening_hour_setting+":"+evening_minute_setting, Toast.LENGTH_LONG).show();
 
         if(evening_onoff_setting.equals("켜짐")){
 
             if(evening_ampm_setting.equals("오후")){
-                evening_hour_setting = evening_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                Integer temp = Integer.parseInt(evening_hour_setting) + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                evening_hour_setting = temp.toString();
             }
-
-            //Integer hour = intent.getIntExtra("hour",0);
-            //Integer minute = intent.getIntExtra("minute",0);
-
             Calendar calendar = Calendar.getInstance();
-            //calendar.set(Calendar.YEAR, 2016);
-            //calendar.set(Calendar.MONTH, Calendar.SEPTEMBER);
-            //calendar.set(Calendar.DATE, 1);
             calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(evening_hour_setting));
             calendar.set(Calendar.MINUTE, Integer.parseInt(evening_minute_setting));
             calendar.set(Calendar.SECOND, 0);
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pIntent);
-
         }
         else if(evening_onoff_setting.equals("꺼짐")){ //나중에 구현하자
 /*
@@ -65,7 +59,7 @@ public class AlyacEveningService extends Service  {
                 mAlarmMgr = null;
                 mAlarmIntent = null;
 */
-/*                Intent intentlocal = new Intent(this,AlyacMorningService.class);
+/*                Intent intentlocal = new Intent(this,AlyacEveningService.class);
                 PendingIntent pilocal = PendingIntent.getBroadcast(SampledateActivity.this,
                         0, intentlocal, 0);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);

@@ -22,6 +22,7 @@ public class AlyacNightService extends Service  {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "서비스시작:", Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         Intent Intent = new Intent(getApplicationContext(), AlyacNightAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
@@ -31,25 +32,18 @@ public class AlyacNightService extends Service  {
         String night_hour_setting = pref_alyac.getString("night_hour", "복약시 설정안됨");
         String night_minute_setting = pref_alyac.getString("night_minute", "복약분 설정안됨");
         String night_onoff_setting = pref_alyac.getString("night_onoff", "설정상태 설정안됨");
-        //Toast.makeText(this, "서비스시작:"+night_ampm_setting+":"+night_hour_setting+":"+night_minute_setting, Toast.LENGTH_LONG).show();
 
         if(night_onoff_setting.equals("켜짐")){
 
             if(night_ampm_setting.equals("오후")){
-                night_hour_setting = night_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                Integer temp = Integer.parseInt(night_hour_setting) + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                night_hour_setting = temp.toString();
             }
-            //Integer hour = intent.getIntExtra("hour",0);
-            //Integer minute = intent.getIntExtra("minute",0);
-
             Calendar calendar = Calendar.getInstance();
-            //calendar.set(Calendar.YEAR, 2016);
-            //calendar.set(Calendar.MONTH, Calendar.SEPTEMBER);
-            //calendar.set(Calendar.DATE, 1);
             calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(night_hour_setting));
             calendar.set(Calendar.MINUTE, Integer.parseInt(night_minute_setting));
             calendar.set(Calendar.SECOND, 0);
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pIntent);
-
         }
         else if(night_onoff_setting.equals("꺼짐")){ //나중에 구현하자
 /*

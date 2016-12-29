@@ -54,6 +54,7 @@
 
     </LinearLayout>
     <ImageButton
+        android:id="@+id/repeat_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"

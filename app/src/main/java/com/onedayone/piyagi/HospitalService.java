@@ -22,6 +22,7 @@ public class HospitalService extends Service  {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Toast.makeText(this, "병원내원 서비스시작:", Toast.LENGTH_LONG).show();
         AlarmManager alarmManager = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
         Intent Intent = new Intent(getApplicationContext(), HospitalAlarmActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, Intent, 0);
@@ -37,10 +38,9 @@ public class HospitalService extends Service  {
 
         if(hospital_onoff_setting.equals("켜짐")){
             if(hospital_ampm_setting.equals("오후")){
-                hospital_hour_setting = hospital_hour_setting + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
-                //Toast.makeText(this, "서비스시작:"+hospital_ampm_setting+":"+hospital_hour_setting+":"+hospital_minute_setting, Toast.LENGTH_LONG).show();
+                Integer temp = Integer.parseInt(hospital_hour_setting) + 12; //알람 매니저에 24시간 체계로 시간을 입력해주기 위해서...
+                hospital_hour_setting = temp.toString();
             }
-
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.YEAR, Integer.parseInt(hospital_year_setting));
             calendar.set(Calendar.MONTH, Integer.parseInt(hospital_month_setting));
@@ -49,7 +49,6 @@ public class HospitalService extends Service  {
             calendar.set(Calendar.MINUTE, Integer.parseInt(hospital_minute_setting));
             calendar.set(Calendar.SECOND, 0);
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pIntent);
-
         }
         else if(hospital_onoff_setting.equals("꺼짐")){ //나중에 구현하자
 /*

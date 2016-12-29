@@ -52,9 +52,7 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"save 클릭됨!",Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(getApplicationContext(), AlyacMorningAlarmActivity.class));
                 save_alyac_morning_settings();
-                //onBackPressed();
                 System.gc();
                 finish();
             }
@@ -152,7 +150,6 @@ public class AlyacMorningSettingActivity extends AppCompatActivity {
                     alyac_minute += 1;
                     tv.setText(String.valueOf(alyac_minute));
                 }
-
             }
         });
 

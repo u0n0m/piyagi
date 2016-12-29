@@ -13,14 +13,13 @@
         android:layout_height="wrap_content"
         android:background="#88D4C7"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/alyac_morning_alarm_bottom1"
+        android:layout_above="@+id/alyac_day_alarm_bottom1"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
             android:text="점심 맛있게 먹었어요?"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
@@ -34,25 +33,29 @@
         <ImageView
             android:id="@+id/alyac_day_animation_imageview"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/day_alarm_0000"
+            android:adjustViewBounds="true"
+            android:layout_centerInParent="true"/>
     </LinearLayout>
     <ImageButton
         android:id="@+id/alyac_day_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:background="@drawable/round_btn4"
         android:src="@drawable/myungin_logo_ok"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:layout_centerInParent="true"
-        android:layout_above="@id/alyac_morning_alarm_bottom1"
+        android:layout_above="@id/alyac_day_alarm_bottom1"
         android:layout_centerHorizontal="true"/>
     <LinearLayout
-        android:id="@+id/alyac_morning_alarm_bottom1"
+        android:id="@+id/alyac_day_alarm_bottom1"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#FFFFFF"
@@ -67,7 +70,6 @@
             android:src="@drawable/piyagi_text"
             android:adjustViewBounds="true"
             android:background="@android:color/transparent" />
-
 
     </LinearLayout>
 

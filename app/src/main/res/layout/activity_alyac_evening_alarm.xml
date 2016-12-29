@@ -34,9 +34,12 @@
             android:id="@+id/alyac_evening_animation_imageview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/evening_alarm_0000"
+            android:adjustViewBounds="true"
             android:layout_gravity="center" />
     </LinearLayout>
     <ImageButton
+        android:id="@+id/alyac_evening_alarm_btn"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
